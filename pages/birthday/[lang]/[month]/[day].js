@@ -193,7 +193,7 @@ export default function BirthdayPage({ lang, month, day, zodiac, stone, flower, 
         {history && history.length > 0 && (
           <>
             <SectionTitle icon="📜" title={t.historyTitle} />
-            <ul style={{ ...styles.famousList, marginBottom: 48 }}>
+            <ul style={{ ...styles.famousList, marginBottom: 16 }}>
               {history.map((ev, i) => (
                 <li key={i} style={{ ...styles.famousItem, borderColor: ev.type === 'sad' ? 'rgba(232,107,138,0.2)' : 'rgba(107,232,107,0.2)' }}>
                   <span style={{ ...styles.famousYear, color: ev.type === 'sad' ? '#e86b8a' : '#6be88a' }}>{ev.year}</span>
@@ -201,6 +201,9 @@ export default function BirthdayPage({ lang, month, day, zodiac, stone, flower, 
                 </li>
               ))}
             </ul>
+            <div style={styles.birthdayClosing}>
+              {t.birthdayClosing}
+            </div>
           </>
         )}
 
@@ -523,6 +526,17 @@ const styles = {
     color: '#8a8aaa',
     fontSize: 12,
     minHeight: 100,
+  },
+  birthdayClosing: {
+    background: 'linear-gradient(135deg, rgba(232,200,74,0.08), rgba(107,174,232,0.08))',
+    border: '1px solid rgba(232,200,74,0.25)',
+    borderRadius: 14,
+    padding: '20px 24px',
+    fontSize: 15,
+    color: '#f5f0e8',
+    lineHeight: 1.8,
+    textAlign: 'center',
+    marginBottom: 48,
   },
   miracleSection: {
     marginBottom: 48,
