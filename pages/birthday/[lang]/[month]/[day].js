@@ -92,7 +92,7 @@ export default function BirthdayPage({ lang, month, day, zodiac, stone, flower, 
         {/* Google AdSense */}
         <script
           async
-          src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-XXXXXXXXXXXXXXXX"
+          src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7572849961321548"
           crossOrigin="anonymous"
         />
       </Head>
@@ -218,7 +218,7 @@ export default function BirthdayPage({ lang, month, day, zodiac, stone, flower, 
             <ins
               className="adsbygoogle"
               style={{ display: 'block' }}
-              data-ad-client="ca-pub-XXXXXXXXXXXXXXXX"
+              data-ad-client="ca-pub-7572849961321548"
               data-ad-slot="XXXXXXXXXX"
               data-ad-format="auto"
               data-full-width-responsive="true"
