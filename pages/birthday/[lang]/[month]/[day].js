@@ -269,6 +269,11 @@ export default function BirthdayPage({ lang, month, day, zodiac, stone, flower, 
               🌍 A portion of revenue is donated to UNICEF
             </a>
           </p>
+          <p style={{ marginTop: 6 }}>
+            <a href="/privacy" style={{ color: '#44445a', textDecoration: 'none' }}>
+              プライバシーポリシー / Privacy Policy
+            </a>
+          </p>      
         </footer>
 
       </div>
