@@ -222,7 +222,7 @@ export default function BirthdayPage({ lang, month, day, zodiac, stone, flower, 
               className="adsbygoogle"
               style={{ display: 'block' }}
               data-ad-client="ca-pub-7572849961321548"
-              data-ad-slot="XXXXXXXXXX"
+              data-ad-slot="7157775568"
               data-ad-format="auto"
               data-full-width-responsive="true"
             />
