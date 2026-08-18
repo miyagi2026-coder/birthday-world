@@ -2021,8 +2021,6 @@ export const famousPeople = {
     { year: '1970', name: { ja: '藤原紀香', en: 'Norika Fujiwara', es: 'Norika Fujiwara', zh: '藤原纪香', ko: '후지와라 노리카', pt: 'Norika Fujiwara' }, role: { ja: '女優・元ミス日本（日本）', en: 'Actress & former Miss Japan (Japan)', es: 'Actriz y ex Miss Japón (Japón)', zh: '女演员、前日本小姐（日本）', ko: '배우, 전 미스 재팬 (일본)', pt: 'Atriz e ex-Miss Japão (Japão)' } },
   ],
 
-};
-
   '2-14': [
     { year: '1946', name: { ja: 'グレッグ・ノーマン（別日）', en: 'ENIAC Computer', es: 'Computadora ENIAC', zh: 'ENIAC电脑', ko: 'ENIAC 컴퓨터', pt: 'Computador ENIAC' }, role: { ja: '世界初の汎用コンピューター公開', en: 'World\'s first general-purpose computer unveiled', es: 'Primera computadora de propósito general del mundo', zh: '全球首台通用计算机问世', ko: '세계 최초의 범용 컴퓨터 공개', pt: 'Primeiro computador de uso geral do mundo' } },
     { year: '1859', name: { ja: 'クリストファー・ショールズ', en: 'Christopher Latham Sholes', es: 'Christopher Latham Sholes', zh: '克里斯托弗·肖尔斯', ko: '크리스토퍼 숄스', pt: 'Christopher Latham Sholes' }, role: { ja: 'タイプライターの発明者', en: 'Inventor of the typewriter', es: 'Inventor de la máquina de escribir', zh: '打字机发明者', ko: '타자기 발명가', pt: 'Inventor da máquina de escrever' } },
@@ -2128,6 +2126,8 @@ export const famousPeople = {
     { year: '1966', name: { ja: 'サミュエル・L・ジャクソン', en: 'Samuel L. Jackson', es: 'Samuel L. Jackson', zh: '塞缪尔·L·杰克逊', ko: '사무엘 L. 잭슨', pt: 'Samuel L. Jackson' }, role: { ja: '俳優「パルプ・フィクション」', en: 'Actor, Pulp Fiction', es: 'Actor, Pulp Fiction', zh: '演员《低俗小说》', ko: '배우 《펄프 픽션》', pt: 'Ator, Pulp Fiction' } },
     { year: '1965', name: { ja: '渡辺徹', en: 'Toru Watanabe', es: 'Toru Watanabe', zh: '渡边彻', ko: '와타나베 토루', pt: 'Toru Watanabe' }, role: { ja: '俳優（日本）', en: 'Actor (Japan)', es: 'Actor (Japón)', zh: '演员（日本）', ko: '배우 (일본)', pt: 'Ator (Japão)' } },
   ],
+};
+
 // ── 歴史的出来事（有名人の誕生・死去は含めない）────────────
 export const historicalEvents = {
   // ═══ 既存データ（元のbirthdays.jsより） ═══
