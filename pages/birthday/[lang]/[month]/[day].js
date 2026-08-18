@@ -17,7 +17,7 @@ export async function getStaticPaths() {
   const paths = [];
   for (const lang of supportedLangs) {
     for (let m = 1; m <= 12; m++) {
-      const daysInMonth = new Date(2024, m, 0).getDate(); // 2024 is a leap year
+      const daysInMonth = new Date(2024, m, 0).getDate();
       for (let d = 1; d <= daysInMonth; d++) {
         paths.push({
           params: {
@@ -56,7 +56,6 @@ export default function BirthdayPage({ lang, month, day, zodiac, stone, flower, 
 
   useEffect(() => { setMounted(true); }, []);
 
-  // 月名（日本語）
   const monthJa = ['','1月','2月','3月','4月','5月','6月','7月','8月','9月','10月','11月','12月'];
   const monthEn = ['','January','February','March','April','May','June','July','August','September','October','November','December'];
 
@@ -69,21 +68,39 @@ export default function BirthdayPage({ lang, month, day, zodiac, stone, flower, 
 
   const famousList = famous || defaultFamous;
 
-  // OGP
   const pageTitle = `${dateLabel} | Birthday World`;
   const pageDesc  = lang === 'ja'
     ? `${dateLabel}生まれのあなたへ。誕生石・星座・今日生まれの有名人も。`
     : `Happy Birthday to you born on ${dateLabel}! Discover your birthstone, zodiac, and famous people.`;
+
+  const ogpImage = 'https://birthday-world-theta.vercel.app/ogp.png';
+  const canonicalUrl = `https://birthday-world-theta.vercel.app/birthday/${lang}/${String(month).padStart(2,'0')}/${String(day).padStart(2,'0')}`;
 
   return (
     <>
       <Head>
         <title>{pageTitle}</title>
         <meta name="description" content={pageDesc} />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="canonical" href={canonicalUrl} />
+
+        {/* OGP */}
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content={canonicalUrl} />
         <meta property="og:title" content={pageTitle} />
         <meta property="og:description" content={pageDesc} />
-        <meta property="og:type" content="website" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta property="og:image" content={ogpImage} />
+        <meta property="og:image:width" content="1200" />
+        <meta property="og:image:height" content="630" />
+        <meta property="og:site_name" content="Birthday World" />
+        <meta property="og:locale" content={lang === 'ja' ? 'ja_JP' : lang === 'zh' ? 'zh_CN' : lang === 'ko' ? 'ko_KR' : lang === 'pt' ? 'pt_BR' : lang === 'es' ? 'es_ES' : 'en_US'} />
+
+        {/* Twitter Card */}
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content={pageTitle} />
+        <meta name="twitter:description" content={pageDesc} />
+        <meta name="twitter:image" content={ogpImage} />
+
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link
           href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Noto+Sans+JP:wght@300;400;500&display=swap"
@@ -134,12 +151,10 @@ export default function BirthdayPage({ lang, month, day, zodiac, stone, flower, 
         }
       `}</style>
 
-      {/* Stars canvas */}
       {mounted && <StarField />}
 
       <div style={styles.wrap}>
 
-        {/* Language switcher */}
         <nav style={styles.langNav}>
           {supportedLangs.map(l => (
             <a
@@ -152,13 +167,11 @@ export default function BirthdayPage({ lang, month, day, zodiac, stone, flower, 
           ))}
         </nav>
 
-        {/* Hero */}
         <div style={styles.hero}>
           <div style={styles.datePill}>{dateLabel}</div>
           <div style={styles.candles}>🎂</div>
           <h1 style={styles.h1}>{t.heroTitle(month, day)}</h1>
           <p style={styles.sub}>{t.heroSub}</p>
-
           <div style={styles.messageBox}>
             <p>{t.msg1}</p>
             <p style={{ marginTop: 14 }}>{t.msg2}</p>
@@ -167,7 +180,6 @@ export default function BirthdayPage({ lang, month, day, zodiac, stone, flower, 
 
         <Divider />
 
-        {/* Info cards */}
         <div style={styles.infoGrid}>
           <InfoCard icon="✨" label={t.zodiacLabel} value={`${zodiac[lang] || zodiac.en} ${zodiac.symbol}`} note={zodiac.en} />
           <InfoCard icon="💎" label={t.stoneLabel}  value={stone?.[lang] || stone?.en} note={stone?.en} />
@@ -175,7 +187,6 @@ export default function BirthdayPage({ lang, month, day, zodiac, stone, flower, 
           <InfoCard icon="🌍" label={t.celebLabel}  value={t.celebValue} note={t.celebNote} />
         </div>
 
-        {/* Famous people */}
         <SectionTitle icon="🌟" title={t.famousTitle} />
         <ul style={styles.famousList}>
           {famousList.map((f, i) => (
@@ -189,7 +200,6 @@ export default function BirthdayPage({ lang, month, day, zodiac, stone, flower, 
           ))}
         </ul>
 
-        {/* Historical events */}
         {history && history.length > 0 && (
           <>
             <SectionTitle icon="📜" title={t.historyTitle} />
@@ -201,13 +211,10 @@ export default function BirthdayPage({ lang, month, day, zodiac, stone, flower, 
                 </li>
               ))}
             </ul>
-            <div style={styles.birthdayClosing}>
-              {t.birthdayClosing}
-            </div>
+            <div style={styles.birthdayClosing}>{t.birthdayClosing}</div>
           </>
         )}
 
-        {/* AdSense */}
         <div style={styles.giftSection}>
           <div style={styles.giftHeader}>
             <span style={{ fontSize: 36 }}>✨</span>
@@ -217,7 +224,6 @@ export default function BirthdayPage({ lang, month, day, zodiac, stone, flower, 
             </div>
           </div>
           <div style={styles.adBlock}>
-            {/* Google AdSense */}
             <ins
               className="adsbygoogle"
               style={{ display: 'block' }}
@@ -229,7 +235,6 @@ export default function BirthdayPage({ lang, month, day, zodiac, stone, flower, 
           </div>
         </div>
 
-        {/* Miracle message */}
         <div style={styles.miracleSection}>
           <div style={styles.miracleInner}>
             <div style={{ fontSize: 36, marginBottom: 16, animation: 'flicker 2.5s ease-in-out infinite alternate' }}>🕯️</div>
@@ -240,18 +245,14 @@ export default function BirthdayPage({ lang, month, day, zodiac, stone, flower, 
               ))}
             </p>
             <div style={styles.miracleLangs}>
-              <span>생명은 축복입니다</span>
-              <span>·</span>
-              <span>生命是奇迹</span>
-              <span>·</span>
-              <span>A vida é um milagre</span>
-              <span>·</span>
+              <span>생명은 축복입니다</span><span>·</span>
+              <span>生命是奇迹</span><span>·</span>
+              <span>A vida é um milagre</span><span>·</span>
               <span>La vie est un miracle</span>
             </div>
           </div>
         </div>
 
-        {/* Share */}
         <div style={styles.shareArea}>
           <p style={{ fontSize: 13, color: 'var(--muted)', marginBottom: 16 }}>
             {lang === 'ja' ? 'あなたも誰かの誕生日を祝ってあげましょう' : 'Share the love with someone born today!'}
@@ -273,7 +274,7 @@ export default function BirthdayPage({ lang, month, day, zodiac, stone, flower, 
             <a href="/privacy" style={{ color: '#44445a', textDecoration: 'none' }}>
               プライバシーポリシー / Privacy Policy
             </a>
-          </p>      
+          </p>
         </footer>
 
       </div>
@@ -291,14 +292,12 @@ function StarField() {
     const resize = () => { canvas.width = window.innerWidth; canvas.height = window.innerHeight; };
     resize();
     window.addEventListener('resize', resize);
-
     const stars = Array.from({ length: 120 }, () => ({
       x: Math.random(), y: Math.random(),
       r: Math.random() * 1.4 + 0.3,
       speed: Math.random() * 0.006 + 0.002,
       phase: Math.random() * Math.PI * 2,
     }));
-
     let raf;
     const draw = (t) => {
       ctx.clearRect(0, 0, canvas.width, canvas.height);
@@ -314,12 +313,8 @@ function StarField() {
     raf = requestAnimationFrame(draw);
     return () => { cancelAnimationFrame(raf); window.removeEventListener('resize', resize); };
   }, []);
-
   return (
-    <canvas
-      id="starfield"
-      style={{ position: 'fixed', inset: 0, pointerEvents: 'none', zIndex: 0 }}
-    />
+    <canvas id="starfield" style={{ position: 'fixed', inset: 0, pointerEvents: 'none', zIndex: 0 }} />
   );
 }
 
@@ -353,251 +348,38 @@ function InfoCard({ icon, label, value, note }) {
 
 // ── Styles ────────────────────────────────────────────────
 const styles = {
-  wrap: {
-    position: 'relative',
-    zIndex: 1,
-    maxWidth: 720,
-    margin: '0 auto',
-    padding: '0 24px 80px',
-  },
-  langNav: {
-    display: 'flex',
-    flexWrap: 'wrap',
-    gap: 8,
-    justifyContent: 'center',
-    padding: '20px 0 0',
-  },
-  langBtn: {
-    padding: '4px 12px',
-    borderRadius: 100,
-    border: '1px solid rgba(232,200,74,0.2)',
-    color: '#8a8aaa',
-    fontSize: 12,
-    textDecoration: 'none',
-    transition: 'all 0.2s',
-  },
-  langBtnActive: {
-    color: '#e8c84a',
-    borderColor: '#e8c84a',
-    background: 'rgba(232,200,74,0.08)',
-  },
-  hero: {
-    textAlign: 'center',
-    padding: '60px 0 56px',
-  },
-  datePill: {
-    display: 'inline-block',
-    fontSize: 11,
-    letterSpacing: '0.25em',
-    color: '#e8c84a',
-    textTransform: 'uppercase',
-    border: '1px solid rgba(232,200,74,0.18)',
-    padding: '6px 20px',
-    borderRadius: 100,
-    marginBottom: 36,
-  },
-  candles: {
-    fontSize: 52,
-    lineHeight: 1,
-    marginBottom: 28,
-    display: 'block',
-    animation: 'float 3s ease-in-out infinite',
-  },
-  h1: {
-    fontFamily: "'Playfair Display', serif",
-    fontSize: 'clamp(28px, 5vw, 48px)',
-    fontWeight: 400,
-    lineHeight: 1.2,
-    marginBottom: 12,
-    background: 'linear-gradient(135deg, #e8c84a, #e86b8a, #6baee8)',
-    WebkitBackgroundClip: 'text',
-    WebkitTextFillColor: 'transparent',
-    backgroundClip: 'text',
-  },
-  sub: {
-    fontSize: 14,
-    color: '#8a8aaa',
-    letterSpacing: '0.08em',
-    marginBottom: 40,
-  },
-  messageBox: {
-    background: 'rgba(255,255,255,0.04)',
-    border: '1px solid rgba(232,200,74,0.18)',
-    borderRadius: 16,
-    padding: '32px',
-    fontSize: 15,
-    lineHeight: 2,
-    color: '#d8d0f0',
-    textAlign: 'left',
-  },
-  infoGrid: {
-    display: 'grid',
-    gridTemplateColumns: 'repeat(2, 1fr)',
-    gap: 16,
-    marginBottom: 48,
-  },
-  infoCard: {
-    background: 'rgba(255,255,255,0.04)',
-    border: '1px solid rgba(232,200,74,0.18)',
-    borderRadius: 14,
-    padding: '24px 20px',
-    transition: 'transform 0.2s',
-  },
-  infoLabel: {
-    fontSize: 10,
-    letterSpacing: '0.2em',
-    color: '#a8893a',
-    textTransform: 'uppercase',
-    marginBottom: 6,
-  },
-  infoValue: {
-    fontSize: 17,
-    fontWeight: 500,
-    color: '#f5f0e8',
-  },
-  infoNote: {
-    fontSize: 12,
-    color: '#8a8aaa',
-    marginTop: 4,
-    lineHeight: 1.5,
-  },
-  famousList: {
-    listStyle: 'none',
-    display: 'flex',
-    flexDirection: 'column',
-    gap: 12,
-    marginBottom: 48,
-    padding: 0,
-  },
-  famousItem: {
-    background: 'rgba(255,255,255,0.04)',
-    border: '1px solid rgba(232,200,74,0.18)',
-    borderRadius: 10,
-    padding: '16px 20px',
-    display: 'flex',
-    alignItems: 'center',
-    gap: 14,
-    fontSize: 14,
-  },
-  famousYear: {
-    fontSize: 11,
-    color: '#a8893a',
-    width: 36,
-    flexShrink: 0,
-    textAlign: 'center',
-    background: 'rgba(232,200,74,0.08)',
-    borderRadius: 6,
-    padding: '4px 0',
-  },
-  famousName: {
-    fontWeight: 500,
-    color: '#f5f0e8',
-  },
-  famousRole: {
-    color: '#8a8aaa',
-    fontSize: 12,
-    marginTop: 2,
-  },
-  giftSection: {
-    marginBottom: 48,
-  },
-  giftHeader: {
-    display: 'flex',
-    alignItems: 'center',
-    gap: 16,
-    background: 'linear-gradient(135deg, rgba(232,200,74,0.08), rgba(232,107,138,0.08))',
-    border: '1px solid rgba(232,200,74,0.18)',
-    borderRadius: '16px 16px 0 0',
-    padding: '24px 28px',
-  },
-  giftTitle: {
-    fontFamily: "'Playfair Display', serif",
-    fontSize: 18,
-    color: '#e8c84a',
-    marginBottom: 4,
-  },
-  giftSub: {
-    fontSize: 13,
-    color: '#8a8aaa',
-    lineHeight: 1.6,
-  },
-  adBlock: {
-    background: 'rgba(255,255,255,0.02)',
-    border: '1px dashed rgba(255,255,255,0.1)',
-    borderTop: 'none',
-    borderRadius: '0 0 16px 16px',
-    padding: '32px',
-    textAlign: 'center',
-    color: '#8a8aaa',
-    fontSize: 12,
-    minHeight: 100,
-  },
-  birthdayClosing: {
-    background: 'linear-gradient(135deg, rgba(232,200,74,0.08), rgba(107,174,232,0.08))',
-    border: '1px solid rgba(232,200,74,0.25)',
-    borderRadius: 14,
-    padding: '20px 24px',
-    fontSize: 15,
-    color: '#f5f0e8',
-    lineHeight: 1.8,
-    textAlign: 'center',
-    marginBottom: 48,
-  },
-  miracleSection: {
-    marginBottom: 48,
-  },
-  miracleInner: {
-    background: 'linear-gradient(160deg, rgba(107,174,232,0.07), rgba(232,107,138,0.07), rgba(232,200,74,0.07))',
-    border: '1px solid rgba(107,174,232,0.25)',
-    borderRadius: 20,
-    padding: '40px 32px',
-    textAlign: 'center',
-  },
-  miracleTitle: {
-    fontFamily: "'Playfair Display', serif",
-    fontSize: 22,
-    fontWeight: 400,
-    color: '#6baee8',
-    marginBottom: 24,
-    letterSpacing: '0.05em',
-  },
-  miracleText: {
-    fontSize: 15,
-    lineHeight: 2.2,
-    color: '#d8d0f0',
-    marginBottom: 24,
-  },
-  miracleLangs: {
-    display: 'flex',
-    justifyContent: 'center',
-    alignItems: 'center',
-    gap: 10,
-    flexWrap: 'wrap',
-    fontSize: 12,
-    color: '#6a6a8a',
-    letterSpacing: '0.05em',
-  },
-  shareArea: {
-    textAlign: 'center',
-    marginBottom: 48,
-  },
-  shareBtn: {
-    display: 'inline-block',
-    padding: '14px 32px',
-    background: 'linear-gradient(135deg, rgba(232,200,74,0.13), rgba(232,107,138,0.13))',
-    border: '1px solid rgba(232,200,74,0.18)',
-    borderRadius: 100,
-    color: '#e8c84a',
-    fontSize: 14,
-    cursor: 'pointer',
-    textDecoration: 'none',
-    letterSpacing: '0.05em',
-  },
-  footer: {
-    textAlign: 'center',
-    fontSize: 11,
-    color: '#44445a',
-    paddingTop: 32,
-    borderTop: '1px solid rgba(255,255,255,0.05)',
-  },
+  wrap: { position: 'relative', zIndex: 1, maxWidth: 720, margin: '0 auto', padding: '0 24px 80px' },
+  langNav: { display: 'flex', flexWrap: 'wrap', gap: 8, justifyContent: 'center', padding: '20px 0 0' },
+  langBtn: { padding: '4px 12px', borderRadius: 100, border: '1px solid rgba(232,200,74,0.2)', color: '#8a8aaa', fontSize: 12, textDecoration: 'none', transition: 'all 0.2s' },
+  langBtnActive: { color: '#e8c84a', borderColor: '#e8c84a', background: 'rgba(232,200,74,0.08)' },
+  hero: { textAlign: 'center', padding: '60px 0 56px' },
+  datePill: { display: 'inline-block', fontSize: 11, letterSpacing: '0.25em', color: '#e8c84a', textTransform: 'uppercase', border: '1px solid rgba(232,200,74,0.18)', padding: '6px 20px', borderRadius: 100, marginBottom: 36 },
+  candles: { fontSize: 52, lineHeight: 1, marginBottom: 28, display: 'block', animation: 'float 3s ease-in-out infinite' },
+  h1: { fontFamily: "'Playfair Display', serif", fontSize: 'clamp(28px, 5vw, 48px)', fontWeight: 400, lineHeight: 1.2, marginBottom: 12, background: 'linear-gradient(135deg, #e8c84a, #e86b8a, #6baee8)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent', backgroundClip: 'text' },
+  sub: { fontSize: 14, color: '#8a8aaa', letterSpacing: '0.08em', marginBottom: 40 },
+  messageBox: { background: 'rgba(255,255,255,0.04)', border: '1px solid rgba(232,200,74,0.18)', borderRadius: 16, padding: '32px', fontSize: 15, lineHeight: 2, color: '#d8d0f0', textAlign: 'left' },
+  infoGrid: { display: 'grid', gridTemplateColumns: 'repeat(2, 1fr)', gap: 16, marginBottom: 48 },
+  infoCard: { background: 'rgba(255,255,255,0.04)', border: '1px solid rgba(232,200,74,0.18)', borderRadius: 14, padding: '24px 20px', transition: 'transform 0.2s' },
+  infoLabel: { fontSize: 10, letterSpacing: '0.2em', color: '#a8893a', textTransform: 'uppercase', marginBottom: 6 },
+  infoValue: { fontSize: 17, fontWeight: 500, color: '#f5f0e8' },
+  infoNote: { fontSize: 12, color: '#8a8aaa', marginTop: 4, lineHeight: 1.5 },
+  famousList: { listStyle: 'none', display: 'flex', flexDirection: 'column', gap: 12, marginBottom: 48, padding: 0 },
+  famousItem: { background: 'rgba(255,255,255,0.04)', border: '1px solid rgba(232,200,74,0.18)', borderRadius: 10, padding: '16px 20px', display: 'flex', alignItems: 'center', gap: 14, fontSize: 14 },
+  famousYear: { fontSize: 11, color: '#a8893a', width: 36, flexShrink: 0, textAlign: 'center', background: 'rgba(232,200,74,0.08)', borderRadius: 6, padding: '4px 0' },
+  famousName: { fontWeight: 500, color: '#f5f0e8' },
+  famousRole: { color: '#8a8aaa', fontSize: 12, marginTop: 2 },
+  giftSection: { marginBottom: 48 },
+  giftHeader: { display: 'flex', alignItems: 'center', gap: 16, background: 'linear-gradient(135deg, rgba(232,200,74,0.08), rgba(232,107,138,0.08))', border: '1px solid rgba(232,200,74,0.18)', borderRadius: '16px 16px 0 0', padding: '24px 28px' },
+  giftTitle: { fontFamily: "'Playfair Display', serif", fontSize: 18, color: '#e8c84a', marginBottom: 4 },
+  giftSub: { fontSize: 13, color: '#8a8aaa', lineHeight: 1.6 },
+  adBlock: { background: 'rgba(255,255,255,0.02)', border: '1px dashed rgba(255,255,255,0.1)', borderTop: 'none', borderRadius: '0 0 16px 16px', padding: '32px', textAlign: 'center', color: '#8a8aaa', fontSize: 12, minHeight: 100 },
+  birthdayClosing: { background: 'linear-gradient(135deg, rgba(232,200,74,0.08), rgba(107,174,232,0.08))', border: '1px solid rgba(232,200,74,0.25)', borderRadius: 14, padding: '20px 24px', fontSize: 15, color: '#f5f0e8', lineHeight: 1.8, textAlign: 'center', marginBottom: 48 },
+  miracleSection: { marginBottom: 48 },
+  miracleInner: { background: 'linear-gradient(160deg, rgba(107,174,232,0.07), rgba(232,107,138,0.07), rgba(232,200,74,0.07))', border: '1px solid rgba(107,174,232,0.25)', borderRadius: 20, padding: '40px 32px', textAlign: 'center' },
+  miracleTitle: { fontFamily: "'Playfair Display', serif", fontSize: 22, fontWeight: 400, color: '#6baee8', marginBottom: 24, letterSpacing: '0.05em' },
+  miracleText: { fontSize: 15, lineHeight: 2.2, color: '#d8d0f0', marginBottom: 24 },
+  miracleLangs: { display: 'flex', justifyContent: 'center', alignItems: 'center', gap: 10, flexWrap: 'wrap', fontSize: 12, color: '#6a6a8a', letterSpacing: '0.05em' },
+  shareArea: { textAlign: 'center', marginBottom: 48 },
+  shareBtn: { display: 'inline-block', padding: '14px 32px', background: 'linear-gradient(135deg, rgba(232,200,74,0.13), rgba(232,107,138,0.13))', border: '1px solid rgba(232,200,74,0.18)', borderRadius: 100, color: '#e8c84a', fontSize: 14, cursor: 'pointer', textDecoration: 'none', letterSpacing: '0.05em' },
+  footer: { textAlign: 'center', fontSize: 11, color: '#44445a', paddingTop: 32, borderTop: '1px solid rgba(255,255,255,0.05)' },
 };
