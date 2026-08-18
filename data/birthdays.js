@@ -2131,238 +2131,6 @@ export const famousPeople = {
 // ── 歴史的出来事（有名人の誕生・死去は含めない）────────────
 export const historicalEvents = {
   // ═══ 既存データ（元のbirthdays.jsより） ═══
-  '1-1': [
-    { year: '1735', name: { ja: 'ポール・リビア', en: 'Paul Revere', es: 'Paul Revere', zh: '保罗·里维尔', ko: '폴 리비어', pt: 'Paul Revere' }, role: { ja: 'アメリカの愛国者・銀細工師', en: 'American patriot & silversmith', es: 'Patriota americano', zh: '美国爱国者', ko: '미국 애국자', pt: 'Patriota americano' } },
-    { year: '1919', name: { ja: 'J.D.サリンジャー', en: 'J.D. Salinger', es: 'J.D. Salinger', zh: 'J.D.塞林格', ko: 'J.D. 샐린저', pt: 'J.D. Salinger' }, role: { ja: '作家「ライ麦畑でつかまえて」', en: 'Author, The Catcher in the Rye', es: 'Autor, El guardián entre el centeno', zh: '作家《麦田里的守望者》', ko: '소설가 《호밀밭의 파수꾼》', pt: 'Autor, O Apanhador no Campo de Centeio' } },
-    { year: '1935', name: { ja: '長嶋茂雄', en: 'Shigeo Nagashima', es: 'Shigeo Nagashima', zh: '长岛茂雄', ko: '나가시마 시게오', pt: 'Shigeo Nagashima' }, role: { ja: 'プロ野球選手・国民的英雄（日本）', en: 'Baseball legend (Japan)', es: 'Leyenda del béisbol (Japón)', zh: '棒球传奇（日本）', ko: '야구 레전드 (일본)', pt: 'Lenda do beisebol (Japão)' } },
-  ],
-  '1-8': [
-    { year: '1935', name: { ja: 'エルヴィス・プレスリー', en: 'Elvis Presley', es: 'Elvis Presley', zh: '猫王埃尔维斯·普雷斯利', ko: '엘비스 프레슬리', pt: 'Elvis Presley' }, role: { ja: 'ロックの王様', en: 'King of Rock and Roll', es: 'El Rey del Rock and Roll', zh: '摇滚之王', ko: '로큰롤의 왕', pt: 'Rei do Rock and Roll' } },
-    { year: '1942', name: { ja: 'スティーヴン・ホーキング', en: 'Stephen Hawking', es: 'Stephen Hawking', zh: '斯蒂芬·霍金', ko: '스티븐 호킹', pt: 'Stephen Hawking' }, role: { ja: '理論物理学者・宇宙論の権威', en: 'Theoretical physicist & cosmologist', es: 'Físico teórico y cosmólogo', zh: '理论物理学家', ko: '이론물리학자', pt: 'Físico teórico' } },
-    { year: '1963', name: { ja: '内田裕也', en: 'Yuya Uchida', es: 'Yuya Uchida', zh: '内田裕也', ko: '우치다 유야', pt: 'Yuya Uchida' }, role: { ja: 'ロックミュージシャン（日本）', en: 'Rock musician (Japan)', es: 'Músico de rock (Japón)', zh: '摇滚音乐家（日本）', ko: '록 뮤지션 (일본)', pt: 'Músico de rock (Japão)' } },
-  ],
-  '1-15': [
-    { year: '1929', name: { ja: 'マーティン・ルーサー・キング・ジュニア', en: 'Martin Luther King Jr.', es: 'Martin Luther King Jr.', zh: '马丁·路德·金', ko: '마틴 루서 킹 주니어', pt: 'Martin Luther King Jr.' }, role: { ja: '公民権運動の指導者・ノーベル平和賞受賞', en: 'Civil rights leader & Nobel Peace Prize laureate', es: 'Líder de derechos civiles y Premio Nobel de la Paz', zh: '民权运动领袖、诺贝尔和平奖得主', ko: '민권운동 지도자, 노벨 평화상 수상', pt: 'Líder dos direitos civis e ganhador do Nobel da Paz' } },
-    { year: '1906', name: { ja: 'アリストテレス・オナシス', en: 'Aristotle Onassis', es: 'Aristóteles Onassis', zh: '亚里士多德·奥纳西斯', ko: '아리스토텔레스 오나시스', pt: 'Aristóteles Onassis' }, role: { ja: 'ギリシャの海運王', en: 'Greek shipping magnate', es: 'Magnate naviero griego', zh: '希腊船运大亨', ko: '그리스 해운 재벌', pt: 'Magnata do transporte marítimo grego' } },
-    { year: '1962', name: { ja: '浜田雅功', en: 'Masatoshi Hamada', es: 'Masatoshi Hamada', zh: '滨田雅功', ko: '하마다 마사토시', pt: 'Masatoshi Hamada' }, role: { ja: 'お笑いコンビ「ダウンタウン」（日本）', en: 'Comedian, Downtown duo (Japan)', es: 'Comediante, dúo Downtown (Japón)', zh: '搞笑艺人"downtown"组合（日本）', ko: '개그맨, 다운타운 (일본)', pt: 'Comediante, dupla Downtown (Japão)' } },
-  ],
-  '1-17': [
-    { year: '1706', name: { ja: 'ベンジャミン・フランクリン', en: 'Benjamin Franklin', es: 'Benjamin Franklin', zh: '本杰明·富兰克林', ko: '벤저민 프랭클린', pt: 'Benjamin Franklin' }, role: { ja: 'アメリカ建国の父・発明家', en: 'Founding Father & inventor', es: 'Padre Fundador e inventor', zh: '美国开国元勋、发明家', ko: '미국 건국의 아버지, 발명가', pt: 'Pai Fundador e inventor' } },
-    { year: '1942', name: { ja: 'モハメド・アリ', en: 'Muhammad Ali', es: 'Muhammad Ali', zh: '穆罕默德·阿里', ko: '무하마드 알리', pt: 'Muhammad Ali' }, role: { ja: 'ボクサー・人権活動家', en: 'Boxer & activist', es: 'Boxeador y activista', zh: '拳击手、社会活动家', ko: '복서, 인권 운동가', pt: 'Boxeador e ativista' } },
-    { year: '1956', name: { ja: '所ジョージ', en: 'George Tokoro', es: 'George Tokoro', zh: '所乔治', ko: '도코로 조지', pt: 'George Tokoro' }, role: { ja: 'タレント・ミュージシャン（日本）', en: 'Entertainer & musician (Japan)', es: 'Animador y músico (Japón)', zh: '艺人、音乐家（日本）', ko: '엔터테이너, 뮤지션 (일본)', pt: 'Animador e músico (Japão)' } },
-  ],
-  '1-27': [
-    { year: '1756', name: { ja: 'ヴォルフガング・アマデウス・モーツァルト', en: 'Wolfgang Amadeus Mozart', es: 'Wolfgang Amadeus Mozart', zh: '沃尔夫冈·阿玛多伊斯·莫扎特', ko: '볼프강 아마데우스 모차르트', pt: 'Wolfgang Amadeus Mozart' }, role: { ja: '古典派の天才作曲家', en: 'Classical music genius & composer', es: 'Genio de la música clásica', zh: '古典音乐天才作曲家', ko: '고전 음악의 천재 작곡가', pt: 'Gênio da música clássica' } },
-    { year: '1832', name: { ja: 'ルイス・キャロル', en: 'Lewis Carroll', es: 'Lewis Carroll', zh: '刘易斯·卡罗尔', ko: '루이스 캐럴', pt: 'Lewis Carroll' }, role: { ja: '作家「不思議の国のアリス」', en: 'Author, Alice in Wonderland', es: 'Autor, Alicia en el País de las Maravillas', zh: '作家《爱丽丝梦游仙境》', ko: '소설가 《이상한 나라의 앨리스》', pt: 'Autor, Alice no País das Maravilhas' } },
-    { year: '1964', name: { ja: '明石家さんま', en: 'Sanma Akashiya', es: 'Sanma Akashiya', zh: '明石家秋刀鱼', ko: '아카시야 산마', pt: 'Sanma Akashiya' }, role: { ja: 'お笑いタレント・司会者（日本）', en: 'Comedian & TV host (Japan)', es: 'Comediante y presentador de TV (Japón)', zh: '喜剧演员、主持人（日本）', ko: '개그맨, MC (일본)', pt: 'Comediante e apresentador de TV (Japão)' } },
-  ],
-  '1-29': [
-    { year: '1954', name: { ja: 'オプラ・ウィンフリー', en: 'Oprah Winfrey', es: 'Oprah Winfrey', zh: '奥普拉·温弗瑞', ko: '오프라 윈프리', pt: 'Oprah Winfrey' }, role: { ja: 'メディア界の女王・慈善家', en: 'Media mogul & philanthropist', es: 'Magnate de los medios y filántropa', zh: '媒体大亨、慈善家', ko: '미디어 황제, 자선가', pt: 'Magnata da mídia e filantropa' } },
-    { year: '1945', name: { ja: 'トム・セレック', en: 'Tom Selleck', es: 'Tom Selleck', zh: '汤姆·塞立克', ko: '톰 셀렉', pt: 'Tom Selleck' }, role: { ja: '俳優「マグナム P.I.」', en: 'Actor, Magnum P.I.', es: 'Actor, Magnum P.I.', zh: '演员《夏威夷神探》', ko: '배우 《마그넘 P.I.》', pt: 'Ator, Magnum P.I.' } },
-    { year: '1969', name: { ja: '鈴木保奈美', en: 'Honami Suzuki', es: 'Honami Suzuki', zh: '铃木保奈美', ko: '스즈키 호나미', pt: 'Honami Suzuki' }, role: { ja: '女優（日本）', en: 'Actress (Japan)', es: 'Actriz (Japón)', zh: '女演员（日本）', ko: '배우 (일본)', pt: 'Atriz (Japão)' } },
-  ],
-  '2-7': [
-    { year: '1812', name: { ja: 'チャールズ・ディケンズ', en: 'Charles Dickens', es: 'Charles Dickens', zh: '查尔斯·狄更斯', ko: '찰스 디킨스', pt: 'Charles Dickens' }, role: { ja: 'ヴィクトリア朝の大小説家', en: 'Victorian novelist', es: 'Novelista victoriano', zh: '维多利亚时代小说家', ko: '빅토리아 시대 소설가', pt: 'Romancista vitoriano' } },
-    { year: '1962', name: { ja: 'ガース・ブルックス', en: 'Garth Brooks', es: 'Garth Brooks', zh: '加思·布鲁克斯', ko: '가스 브룩스', pt: 'Garth Brooks' }, role: { ja: 'カントリーミュージックのスーパースター', en: 'Country music superstar', es: 'Superestrella de la música country', zh: '乡村音乐巨星', ko: '컨트리 음악 슈퍼스타', pt: 'Superestrela da música country' } },
-    { year: '1970', name: { ja: '松本人志', en: 'Hitoshi Matsumoto', es: 'Hitoshi Matsumoto', zh: '松本人志', ko: '마쓰모토 히토시', pt: 'Hitoshi Matsumoto' }, role: { ja: 'お笑い芸人「ダウンタウン」（日本）', en: 'Comedian, Downtown duo (Japan)', es: 'Comediante (Japón)', zh: '搞笑艺人（日本）', ko: '개그맨, 다운타운 (일본)', pt: 'Comediante (Japão)' } },
-  ],
-  '2-11': [
-    { year: '1847', name: { ja: 'トーマス・エジソン', en: 'Thomas Edison', es: 'Thomas Edison', zh: '托马斯·爱迪生', ko: '토머스 에디슨', pt: 'Thomas Edison' }, role: { ja: '発明王・電球の発明者', en: 'Inventor of the lightbulb', es: 'Inventor de la bombilla', zh: '发明大王，电灯发明者', ko: '발명왕, 전구 발명가', pt: 'Inventor da lâmpada' } },
-    { year: '1969', name: { ja: 'ジェニファー・アニストン', en: 'Jennifer Aniston', es: 'Jennifer Aniston', zh: '詹妮弗·安妮斯顿', ko: '제니퍼 애니스턴', pt: 'Jennifer Aniston' }, role: { ja: '女優「フレンズ」', en: 'Actress, Friends', es: 'Actriz, Friends', zh: '演员《老友记》', ko: '배우 《프렌즈》', pt: 'Atriz, Friends' } },
-    { year: '1949', name: { ja: '江川卓', en: 'Suguru Egawa', es: 'Suguru Egawa', zh: '江川卓', ko: '에가와 스구루', pt: 'Suguru Egawa' }, role: { ja: 'プロ野球投手（日本）', en: 'Professional baseball pitcher (Japan)', es: 'Lanzador de béisbol profesional (Japón)', zh: '职业棒球投手（日本）', ko: '프로야구 투수 (일본)', pt: 'Arremessador de beisebol profissional (Japão)' } },
-  ],
-  '2-12': [
-    { year: '1809', name: { ja: 'エイブラハム・リンカーン', en: 'Abraham Lincoln', es: 'Abraham Lincoln', zh: '亚伯拉罕·林肯', ko: '에이브러햄 링컨', pt: 'Abraham Lincoln' }, role: { ja: 'アメリカ第16代大統領・奴隷解放', en: '16th U.S. President, abolished slavery', es: '16° Presidente de EE.UU., abolió la esclavitud', zh: '美国第16任总统，废除奴隷制', ko: '미국 16대 대통령, 노예제 폐지', pt: '16º Presidente dos EUA, aboliu a escravidão' } },
-    { year: '1809', name: { ja: 'チャールズ・ダーウィン', en: 'Charles Darwin', es: 'Charles Darwin', zh: '查尔斯·达尔文', ko: '찰스 다윈', pt: 'Charles Darwin' }, role: { ja: '自然科学者・進化論の提唱者', en: 'Naturalist, theory of evolution', es: 'Naturalista, teoría de la evolución', zh: '博物学家，进化论提出者', ko: '자연학자, 진화론 제창자', pt: 'Naturalista, teoria da evolução' } },
-    { year: '1963', name: { ja: '藤原竜也', en: 'Tatsuya Fujiwara', es: 'Tatsuya Fujiwara', zh: '藤原龙也', ko: '후지와라 타츠야', pt: 'Tatsuya Fujiwara' }, role: { ja: '俳優「デスノート」（日本）', en: 'Actor, Death Note (Japan)', es: 'Actor, Death Note (Japón)', zh: '演员《死亡笔记》（日本）', ko: '배우 《데스노트》(일본)', pt: 'Ator, Death Note (Japão)' } },
-  ],
-  '2-17': [
-    { year: '1963', name: { ja: 'マイケル・ジョーダン', en: 'Michael Jordan', es: 'Michael Jordan', zh: '迈克尔·乔丹', ko: '마이클 조던', pt: 'Michael Jordan' }, role: { ja: 'バスケットボールの神様', en: 'Basketball legend', es: 'Leyenda del baloncesto', zh: '篮球之神', ko: '농구의 신', pt: 'Lenda do basquete' } },
-    { year: '1972', name: { ja: 'ビリー・ジョー・アームストロング', en: 'Billie Joe Armstrong', es: 'Billie Joe Armstrong', zh: '比利·乔·阿姆斯特朗', ko: '빌리 조 암스트롱', pt: 'Billie Joe Armstrong' }, role: { ja: 'ミュージシャン「グリーン・デイ」', en: 'Musician, Green Day', es: 'Músico, Green Day', zh: '音乐家"绿日乐队"', ko: '뮤지션, 그린 데이', pt: 'Músico, Green Day' } },
-    { year: '1958', name: { ja: '中森明菜', en: 'Akina Nakamori', es: 'Akina Nakamori', zh: '中森明菜', ko: '나카모리 아키나', pt: 'Akina Nakamori' }, role: { ja: '歌手・アイドル（日本）', en: 'Singer & idol (Japan)', es: 'Cantante e ídolo (Japón)', zh: '歌手、偶像（日本）', ko: '가수, 아이돌 (일본)', pt: 'Cantora e ídolo (Japão)' } },
-  ],
-  '3-6': [
-    { year: '1475', name: { ja: 'ミケランジェロ', en: 'Michelangelo', es: 'Miguel Ángel', zh: '米开朗基罗', ko: '미켈란젤로', pt: 'Michelangelo' }, role: { ja: 'ルネサンスの天才芸術家', en: 'Renaissance genius artist', es: 'Genio artístico del Renacimiento', zh: '文艺复兴天才艺术家', ko: '르네상스 천재 예술가', pt: 'Gênio artístico do Renascimento' } },
-    { year: '1972', name: { ja: 'シャキール・オニール', en: "Shaquille O'Neal", es: "Shaquille O'Neal", zh: '沙奎尔·奥尼尔', ko: '샤킬 오닐', pt: "Shaquille O'Neal" }, role: { ja: 'NBAバスケットボール選手', en: 'NBA basketball legend', es: 'Leyenda del baloncesto NBA', zh: 'NBA篮球传奇', ko: 'NBA 농구 레전드', pt: 'Lenda do basquete NBA' } },
-    { year: '1959', name: { ja: '石田純一', en: 'Junichi Ishida', es: 'Junichi Ishida', zh: '石田纯一', ko: '이시다 준이치', pt: 'Junichi Ishida' }, role: { ja: '俳優（日本）', en: 'Actor (Japan)', es: 'Actor (Japón)', zh: '演员（日本）', ko: '배우 (일본)', pt: 'Ator (Japão)' } },
-  ],
-  '3-14': [
-    { year: '1879', name: { ja: 'アルベルト・アインシュタイン', en: 'Albert Einstein', es: 'Albert Einstein', zh: '阿尔伯特·爱因斯坦', ko: '알베르트 아인슈타인', pt: 'Albert Einstein' }, role: { ja: '物理学者・相対性理論の提唱者', en: 'Physicist, theory of relativity', es: 'Físico, teoría de la relatividad', zh: '物理学家，相对论提出者', ko: '물리학자, 상대성 이론 제창자', pt: 'Físico, teoria da relatividade' } },
-    { year: '1933', name: { ja: 'マイケル・ケイン', en: 'Michael Caine', es: 'Michael Caine', zh: '迈克尔·凯恩', ko: '마이클 케인', pt: 'Michael Caine' }, role: { ja: 'イギリスの名優', en: 'British acting legend', es: 'Leyenda del cine británico', zh: '英国演技传奇', ko: '영국의 명배우', pt: 'Lenda do cinema britânico' } },
-    { year: '1951', name: { ja: '西田敏行', en: 'Toshiyuki Nishida', es: 'Toshiyuki Nishida', zh: '西田敏行', ko: '니시다 토시유키', pt: 'Toshiyuki Nishida' }, role: { ja: '俳優・歌手（日本）', en: 'Actor & singer (Japan)', es: 'Actor y cantante (Japón)', zh: '演员、歌手（日本）', ko: '배우, 가수 (일본)', pt: 'Ator e cantor (Japão)' } },
-  ],
-  '3-25': [
-    { year: '1942', name: { ja: 'アレサ・フランクリン', en: 'Aretha Franklin', es: 'Aretha Franklin', zh: '艾瑞莎·富兰克林', ko: '아레사 프랭클린', pt: 'Aretha Franklin' }, role: { ja: 'ソウルの女王', en: 'Queen of Soul', es: 'Reina del Soul', zh: '灵魂乐女王', ko: '소울의 여왕', pt: 'Rainha do Soul' } },
-    { year: '1965', name: { ja: 'サラ・ジェシカ・パーカー', en: 'Sarah Jessica Parker', es: 'Sarah Jessica Parker', zh: '莎拉·杰西卡·帕克', ko: '사라 제시카 파커', pt: 'Sarah Jessica Parker' }, role: { ja: '女優「セックス・アンド・ザ・シティ」', en: 'Actress, Sex and the City', es: 'Actriz, Sex and the City', zh: '演员《欲望都市》', ko: '배우 《섹스 앤 더 시티》', pt: 'Atriz, Sex and the City' } },
-    { year: '1949', name: { ja: '桃井かおり', en: 'Kaori Momoi', es: 'Kaori Momoi', zh: '桃井薰', ko: '모모이 가오리', pt: 'Kaori Momoi' }, role: { ja: '女優（日本）', en: 'Actress (Japan)', es: 'Actriz (Japón)', zh: '女演员（日本）', ko: '배우 (일본)', pt: 'Atriz (Japão)' } },
-  ],
-  '4-2': [
-    { year: '1914', name: { ja: 'アレック・ギネス', en: 'Alec Guinness', es: 'Alec Guinness', zh: '亚历克·基尼斯', ko: '알렉 기네스', pt: 'Alec Guinness' }, role: { ja: '俳優「スター・ウォーズ」', en: 'Actor, Star Wars', es: 'Actor, Star Wars', zh: '演员《星球大战》', ko: '배우 《스타워즈》', pt: 'Ator, Star Wars' } },
-    { year: '1939', name: { ja: '宮崎駿', en: 'Hayao Miyazaki', es: 'Hayao Miyazaki', zh: '宫崎骏', ko: '미야자키 하야오', pt: 'Hayao Miyazaki' }, role: { ja: 'アニメ監督・スタジオジブリ（日本）', en: 'Anime director, Studio Ghibli (Japan)', es: 'Director de anime, Studio Ghibli (Japón)', zh: '动画导演、吉卜力工作室（日本）', ko: '애니메이션 감독, 스튜디오 지브리 (일본)', pt: 'Diretor de anime, Studio Ghibli (Japão)' } },
-    { year: '1977', name: { ja: 'クリス・マーティン（コールドプレイ）', en: 'Chris Martin (Coldplay)', es: 'Christopher Martin de Coldplay', zh: '克里斯·马丁（酷玩乐队）', ko: '크리스 마틴 (콜드플레이)', pt: 'Chris Martin do Coldplay' }, role: { ja: 'コールドプレイのボーカル', en: 'Vocalist of Coldplay', es: 'Vocalista de Coldplay', zh: '酷玩乐队主唱', ko: '콜드플레이 보컬', pt: 'Vocalista do Coldplay' } },
-  ],
-  '4-13': [
-    { year: '1743', name: { ja: 'トーマス・ジェファーソン', en: 'Thomas Jefferson', es: 'Thomas Jefferson', zh: '托马斯·杰斐逊', ko: '토머스 제퍼슨', pt: 'Thomas Jefferson' }, role: { ja: 'アメリカ第3代大統領・独立宣言起草者', en: '3rd U.S. President, author of Declaration of Independence', es: '3er Presidente de EE.UU., autor de la Declaración de Independencia', zh: '美国第3任总统，独立宣言起草者', ko: '미국 3대 대통령, 독립선언서 작성자', pt: '3º Presidente dos EUA, autor da Declaração de Independência' } },
-    { year: '1939', name: { ja: 'シーマス・ヒーニー', en: 'Seamus Heaney', es: 'Seamus Heaney', zh: '谢默斯·希尼', ko: '셰이머스 히니', pt: 'Seamus Heaney' }, role: { ja: 'アイルランドの詩人・ノーベル文学賞受賞', en: 'Irish poet & Nobel laureate', es: 'Poeta irlandés y Premio Nobel de Literatura', zh: '爱尔兰诗人，诺贝尔文学奖得主', ko: '아일랜드 시인, 노벨 문학상 수상', pt: 'Poeta irlandês e laureado Nobel' } },
-    { year: '1968', name: { ja: '香川照之', en: 'Teruyuki Kagawa', es: 'Teruyuki Kagawa', zh: '香川照之', ko: '가가와 테루유키', pt: 'Teruyuki Kagawa' }, role: { ja: '俳優（日本）', en: 'Actor (Japan)', es: 'Actor (Japón)', zh: '演员（日本）', ko: '배우 (일본)', pt: 'Ator (Japão)' } },
-  ],
-  '4-15': [
-    { year: '1452', name: { ja: 'レオナルド・ダ・ヴィンチ', en: 'Leonardo da Vinci', es: 'Leonardo da Vinci', zh: '列奥纳多·达·芬奇', ko: '레오나르도 다 빈치', pt: 'Leonardo da Vinci' }, role: { ja: 'ルネサンスの万能人・芸術家・科学者', en: 'Renaissance genius, artist & scientist', es: 'Genio del Renacimiento, artista y científico', zh: '文艺复兴全才，艺术家兼科学家', ko: '르네상스의 천재, 예술가·과학자', pt: 'Gênio do Renascimento, artista e cientista' } },
-    { year: '1959', name: { ja: 'エマ・トンプソン', en: 'Emma Thompson', es: 'Emma Thompson', zh: '艾玛·汤普森', ko: '엠마 톰슨', pt: 'Emma Thompson' }, role: { ja: '女優・脚本家', en: 'Actress & screenwriter', es: 'Actriz y guionista', zh: '女演员、编剧', ko: '배우, 시나리오 작가', pt: 'Atriz e roteirista' } },
-    { year: '1957', name: { ja: '石野真子', en: 'Mako Ishino', es: 'Mako Ishino', zh: '石野真子', ko: '이시노 마코', pt: 'Mako Ishino' }, role: { ja: '歌手・女優（日本）', en: 'Singer & actress (Japan)', es: 'Cantante y actriz (Japón)', zh: '歌手、女演员（日本）', ko: '가수, 배우 (일본)', pt: 'Cantora e atriz (Japão)' } },
-  ],
-  '4-23': [
-    { year: '1564', name: { ja: 'ウィリアム・シェイクスピア', en: 'William Shakespeare', es: 'William Shakespeare', zh: '威廉·莎士比亚', ko: '윌리엄 셰익스피어', pt: 'William Shakespeare' }, role: { ja: '劇作家・詩人（推定）', en: 'Playwright & poet (traditional date)', es: 'Dramaturgo y poeta (fecha tradicional)', zh: '剧作家、诗人（传统日期）', ko: '극작가·시인 (전통적 날짜)', pt: 'Dramaturgo e poeta (data tradicional)' } },
-    { year: '1971', name: { ja: 'ジョン・シナ', en: 'John Cena', es: 'John Cena', zh: '约翰·塞纳', ko: '존 시나', pt: 'John Cena' }, role: { ja: 'プロレスラー・俳優', en: 'Wrestler & actor', es: 'Luchador y actor', zh: '职业摔角手、演员', ko: '프로레슬러, 배우', pt: 'Lutador e ator' } },
-    { year: '1952', name: { ja: '笑福亭鶴瓶', en: 'Tsurube Shofukutei', es: 'Tsurube Shofukutei', zh: '笑福亭鹤瓶', ko: '쇼후쿠테이 쓰루베', pt: 'Tsurube Shofukutei' }, role: { ja: '落語家・タレント（日本）', en: 'Rakugo comedian & TV personality (Japan)', es: 'Comediante y personalidad de TV (Japón)', zh: '落语家、艺人（日本）', ko: '라쿠고 코미디언, TV 퍼스널리티 (일본)', pt: 'Comediante e personalidade de TV (Japão)' } },
-  ],
-  '5-5': [
-    { year: '1818', name: { ja: 'カール・マルクス', en: 'Karl Marx', es: 'Karl Marx', zh: '卡尔·马克思', ko: '카를 마르크스', pt: 'Karl Marx' }, role: { ja: '哲学者・経済学者', en: 'Philosopher & economist', es: 'Filósofo y economista', zh: '哲学家、经济学家', ko: '철학자, 경제학자', pt: 'Filósofo e economista' } },
-    { year: '1988', name: { ja: 'アデル', en: 'Adele', es: 'Adele', zh: '阿黛尔', ko: '아델', pt: 'Adele' }, role: { ja: 'シンガーソングライター', en: 'Singer-songwriter', es: 'Cantautora', zh: '创作型歌手', ko: '싱어송라이터', pt: 'Cantora e compositora' } },
-    { year: '1958', name: { ja: '天童よしみ', en: 'Yoshimi Tendo', es: 'Yoshimi Tendo', zh: '天童よしみ', ko: '텐도 요시미', pt: 'Yoshimi Tendo' }, role: { ja: '演歌歌手（日本）', en: 'Enka singer (Japan)', es: 'Cantante de enka (Japón)', zh: '演歌歌手（日本）', ko: '엔카 가수 (일본)', pt: 'Cantora de enka (Japão)' } },
-  ],
-  '5-24': [
-    { year: '1819', name: { ja: 'ヴィクトリア女王', en: 'Queen Victoria', es: 'Reina Victoria', zh: '维多利亚女王', ko: '빅토리아 여왕', pt: 'Rainha Vitória' }, role: { ja: 'イギリス女王・大英帝国の象徴', en: 'Queen of the United Kingdom', es: 'Reina del Reino Unido', zh: '英国女王，大英帝国象征', ko: '영국 여왕, 대영제국의 상징', pt: 'Rainha do Reino Unido' } },
-    { year: '1941', name: { ja: 'ボブ・ディラン', en: 'Bob Dylan', es: 'Bob Dylan', zh: '鲍勃·迪伦', ko: '밥 딜런', pt: 'Bob Dylan' }, role: { ja: 'シンガーソングライター・ノーベル文学賞受賞', en: 'Singer-songwriter & Nobel laureate', es: 'Cantautor y Premio Nobel de Literatura', zh: '创作歌手，诺贝尔文学奖得主', ko: '싱어송라이터, 노벨 문학상 수상', pt: 'Cantor e compositor, laureado Nobel' } },
-    { year: '1963', name: { ja: '工藤静香', en: 'Shizuka Kudo', es: 'Shizuka Kudo', zh: '工藤静香', ko: '구도 시즈카', pt: 'Shizuka Kudo' }, role: { ja: '歌手・女優（日本）', en: 'Singer & actress (Japan)', es: 'Cantante y actriz (Japón)', zh: '歌手、女演员（日本）', ko: '가수, 배우 (일본)', pt: 'Cantora e atriz (Japão)' } },
-  ],
-  '6-1': [
-    { year: '1926', name: { ja: 'マリリン・モンロー', en: 'Marilyn Monroe', es: 'Marilyn Monroe', zh: '玛丽莲·梦露', ko: '마릴린 먼로', pt: 'Marilyn Monroe' }, role: { ja: '女優・アイコン', en: 'Actress & cultural icon', es: 'Actriz e ícono cultural', zh: '女演员、文化偶像', ko: '배우, 문화 아이콘', pt: 'Atriz e ícone cultural' } },
-    { year: '1974', name: { ja: 'アラニス・モリセット', en: 'Alanis Morissette', es: 'Alanis Morissette', zh: '艾拉妮丝·莫利塞特', ko: '앨라니스 모리셋', pt: 'Alanis Morissette' }, role: { ja: 'シンガーソングライター', en: 'Singer-songwriter', es: 'Cantautora', zh: '创作型歌手', ko: '싱어송라이터', pt: 'Cantora e compositora' } },
-    { year: '1968', name: { ja: '遠藤久美子', en: 'Kumiko Endo', es: 'Kumiko Endo', zh: '远藤久美子', ko: '엔도 구미코', pt: 'Kumiko Endo' }, role: { ja: '女優・歌手（日本）', en: 'Actress & singer (Japan)', es: 'Actriz y cantante (Japón)', zh: '女演员、歌手（日本）', ko: '배우, 가수 (일본)', pt: 'Atriz e cantora (Japão)' } },
-  ],
-  '6-12': [
-    { year: '1929', name: { ja: 'アンネ・フランク', en: 'Anne Frank', es: 'Ana Frank', zh: '安妮·弗兰克', ko: '안네 프랑크', pt: 'Anne Frank' }, role: { ja: '日記作家・ホロコーストの象徴', en: 'Diarist & symbol of the Holocaust', es: 'Diarista y símbolo del Holocausto', zh: '日记作者，大屠杀象征', ko: '일기 작가, 홀로코스트의 상징', pt: 'Diarista e símbolo do Holocausto' } },
-    { year: '1924', name: { ja: 'ジョージ・H・W・ブッシュ', en: 'George H.W. Bush', es: 'George H.W. Bush', zh: '乔治·H·W·布什', ko: '조지 H.W. 부시', pt: 'George H.W. Bush' }, role: { ja: 'アメリカ第41代大統領', en: '41st U.S. President', es: '41° Presidente de EE.UU.', zh: '美国第41任总统', ko: '미국 41대 대통령', pt: '41º Presidente dos EUA' } },
-    { year: '1955', name: { ja: '石川さゆり', en: 'Sayuri Ishikawa', es: 'Sayuri Ishikawa', zh: '石川小百合', ko: '이시카와 사유리', pt: 'Sayuri Ishikawa' }, role: { ja: '演歌歌手（日本）', en: 'Enka singer (Japan)', es: 'Cantante de enka (Japón)', zh: '演歌歌手（日本）', ko: '엔카 가수 (일본)', pt: 'Cantora de enka (Japão)' } },
-  ],
-  '6-18': [
-    { year: '1942', name: { ja: 'ポール・マッカートニー', en: 'Paul McCartney', es: 'Paul McCartney', zh: '保罗·麦卡特尼', ko: '폴 매카트니', pt: 'Paul McCartney' }, role: { ja: 'ミュージシャン「ザ・ビートルズ」', en: 'Musician, The Beatles', es: 'Músico, The Beatles', zh: '音乐家"甲壳虫乐队"', ko: '뮤지션, 비틀즈', pt: 'Músico, The Beatles' } },
-    { year: '1952', name: { ja: 'イザベラ・ロッセリーニ', en: 'Isabella Rossellini', es: 'Isabella Rossellini', zh: '伊莎贝拉·罗西里尼', ko: '이사벨라 로셀리니', pt: 'Isabella Rossellini' }, role: { ja: '女優・モデル', en: 'Actress & model', es: 'Actriz y modelo', zh: '女演员、模特', ko: '배우, 모델', pt: 'Atriz e modelo' } },
-    { year: '1961', name: { ja: '鈴木雅之', en: 'Masayuki Suzuki', es: 'Masayuki Suzuki', zh: '铃木雅之', ko: '스즈키 마사유키', pt: 'Masayuki Suzuki' }, role: { ja: 'R&B歌手（日本）', en: 'R&B singer (Japan)', es: 'Cantante de R&B (Japón)', zh: 'R&B歌手（日本）', ko: 'R&B 가수 (일본)', pt: 'Cantor de R&B (Japão)' } },
-  ],
-  '7-4': [
-    { year: '1900', name: { ja: 'ルイ・アームストロング', en: 'Louis Armstrong', es: 'Louis Armstrong', zh: '路易斯·阿姆斯特朗', ko: '루이 암스트롱', pt: 'Louis Armstrong' }, role: { ja: 'ジャズトランペットの伝説', en: 'Jazz trumpet legend', es: 'Leyenda de la trompeta de jazz', zh: '爵士小号传奇', ko: '재즈 트럼펫 레전드', pt: 'Lenda do trompete de jazz' } },
-    { year: '1961', name: { ja: 'パム・シュライバー', en: 'Pam Shriver', es: 'Pam Shriver', zh: '帕姆·施莱弗', ko: '팸 슈라이버', pt: 'Pam Shriver' }, role: { ja: 'テニス選手', en: 'Tennis player', es: 'Tenista', zh: '网球运动员', ko: '테니스 선수', pt: 'Tenista' } },
-    { year: '1966', name: { ja: '武田真治', en: 'Shinji Takeda', es: 'Shinji Takeda', zh: '武田真治', ko: '다케다 신지', pt: 'Shinji Takeda' }, role: { ja: '俳優・ミュージシャン（日本）', en: 'Actor & musician (Japan)', es: 'Actor y músico (Japón)', zh: '演员、音乐家（日本）', ko: '배우, 뮤지션 (일본)', pt: 'Ator e músico (Japão)' } },
-  ],
-  '7-18': [
-    { year: '1918', name: { ja: 'ネルソン・マンデラ', en: 'Nelson Mandela', es: 'Nelson Mandela', zh: '纳尔逊·曼德拉', ko: '넬슨 만델라', pt: 'Nelson Mandela' }, role: { ja: '反アパルトヘイト指導者・南アフリカ大統領', en: 'Anti-apartheid leader & President of South Africa', es: 'Líder anti-apartheid y Presidente de Sudáfrica', zh: '反种族隔离领袖、南非总统', ko: '반아파르트헤이트 지도자, 남아프리카 대통령', pt: 'Líder anti-apartheid e Presidente da África do Sul' } },
-    { year: '1947', name: { ja: 'ブライアン・メイ', en: 'Brian May', es: 'Brian May', zh: '布莱恩·梅', ko: '브라이언 메이', pt: 'Brian May' }, role: { ja: 'ギタリスト「クイーン」', en: 'Guitarist, Queen', es: 'Guitarrista de Queen', zh: '吉他手"皇后乐队"', ko: '기타리스트, 퀸', pt: 'Guitarrista, Queen' } },
-    { year: '1969', name: { ja: '藤原紀香', en: 'Norika Fujiwara', es: 'Norika Fujiwara', zh: '藤原纪香', ko: '후지와라 노리카', pt: 'Norika Fujiwara' }, role: { ja: '女優・元ミス日本（日本）', en: 'Actress & former Miss Japan (Japan)', es: 'Actriz y ex Miss Japón (Japón)', zh: '女演员、前日本小姐（日本）', ko: '배우, 전 미스 재팬 (일본)', pt: 'Atriz e ex-Miss Japão (Japão)' } },
-  ],
-  '7-21': [
-    { year: '1899', name: { ja: 'アーネスト・ヘミングウェイ', en: 'Ernest Hemingway', es: 'Ernest Hemingway', zh: '欧内斯特·海明威', ko: '어니스트 헤밍웨이', pt: 'Ernest Hemingway' }, role: { ja: 'ノーベル文学賞作家', en: 'Nobel Prize-winning novelist', es: 'Novelista ganador del Premio Nobel', zh: '诺贝尔文学奖作家', ko: '노벨 문학상 수상 소설가', pt: 'Romancista laureado com o Nobel' } },
-    { year: '1952', name: { ja: 'ロビン・ウィリアムズ', en: 'Robin Williams', es: 'Robin Williams', zh: '罗宾·威廉姆斯', ko: '로빈 윌리엄스', pt: 'Robin Williams' }, role: { ja: '俳優・コメディアン', en: 'Actor & comedian', es: 'Actor y comediante', zh: '演员、喜剧演员', ko: '배우, 코미디언', pt: 'Ator e comediante' } },
-    { year: '1971', name: { ja: '内村光良（ウッチャン）', en: 'Mitsuyoshi Uchimura', es: 'Mitsuyoshi Uchimura', zh: '内村光良', ko: '우치무라 미쓰요시', pt: 'Mitsuyoshi Uchimura' }, role: { ja: 'お笑い芸人「ウッチャンナンチャン」（日本）', en: 'Comedian, Ucchan Nanchan (Japan)', es: 'Comediante (Japón)', zh: '搞笑艺人（日本）', ko: '개그맨 (일본)', pt: 'Comediante (Japão)' } },
-  ],
-  '7-31': [
-    { year: '1965', name: { ja: 'J.K.ローリング', en: 'J.K. Rowling', es: 'J.K. Rowling', zh: 'J.K.罗琳', ko: 'J.K. 롤링', pt: 'J.K. Rowling' }, role: { ja: '作家「ハリー・ポッター」シリーズ', en: 'Author, Harry Potter series', es: 'Autora, serie Harry Potter', zh: '作家《哈利·波特》系列', ko: '소설가 《해리 포터》 시리즈', pt: 'Autora, série Harry Potter' } },
-    { year: '1944', name: { ja: 'ジェラルディン・チャップリン', en: 'Geraldine Chaplin', es: 'Geraldine Chaplin', zh: '杰拉尔丁·卓别林', ko: '제럴딘 채플린', pt: 'Geraldine Chaplin' }, role: { ja: '女優・チャーリー・チャップリンの娘', en: 'Actress, daughter of Charlie Chaplin', es: 'Actriz, hija de Charlie Chaplin', zh: '女演员，查理·卓别林之女', ko: '배우, 찰리 채플린의 딸', pt: 'Atriz, filha de Charlie Chaplin' } },
-    { year: '1962', name: { ja: '夏目雅子', en: 'Masako Natsume', es: 'Masako Natsume', zh: '夏目雅子', ko: '나쓰메 마사코', pt: 'Masako Natsume' }, role: { ja: '女優（日本）', en: 'Actress (Japan)', es: 'Actriz (Japón)', zh: '女演员（日本）', ko: '배우 (일본)', pt: 'Atriz (Japão)' } },
-  ],
-  '8-4': [
-    { year: '1961', name: { ja: 'バラク・オバマ', en: 'Barack Obama', es: 'Barack Obama', zh: '巴拉克·奥巴马', ko: '버락 오바마', pt: 'Barack Obama' }, role: { ja: 'アメリカ第44代大統領', en: '44th U.S. President', es: '44° Presidente de EE.UU.', zh: '美国第44任总统', ko: '미국 44대 대통령', pt: '44º Presidente dos EUA' } },
-    { year: '1955', name: { ja: 'ビリー・ボブ・ソーントン', en: 'Billy Bob Thornton', es: 'Billy Bob Thornton', zh: '比利·鲍伯·松顿', ko: '빌리 밥 손턴', pt: 'Billy Bob Thornton' }, role: { ja: '俳優・監督', en: 'Actor & director', es: 'Actor y director', zh: '演员、导演', ko: '배우, 감독', pt: 'Ator e diretor' } },
-    { year: '1958', name: { ja: '渡辺謙', en: 'Ken Watanabe', es: 'Ken Watanabe', zh: '渡边谦', ko: '와타나베 켄', pt: 'Ken Watanabe' }, role: { ja: '俳優「ラスト サムライ」（日本）', en: 'Actor, The Last Samurai (Japan)', es: 'Actor, El último samurái (Japón)', zh: '演员《最后的武士》（日本）', ko: '배우 《라스트 사무라이》 (일본)', pt: 'Ator, O Último Samurai (Japão)' } },
-  ],
-  '8-5': [
-    { year: '1930', name: { ja: 'ニール・アームストロング', en: 'Neil Armstrong', es: 'Neil Armstrong', zh: '尼尔·阿姆斯特朗', ko: '닐 암스트롱', pt: 'Neil Armstrong' }, role: { ja: '人類初の月面着陸者', en: 'First person to walk on the Moon', es: 'Primera persona en caminar en la Luna', zh: '人类首位登月者', ko: '인류 최초의 달 착륙자', pt: 'Primeira pessoa a caminhar na Lua' } },
-    { year: '1906', name: { ja: 'ジョン・ヒューストン', en: 'John Huston', es: 'John Huston', zh: '约翰·休斯顿', ko: '존 휴스턴', pt: 'John Huston' }, role: { ja: '映画監督「マルタの鷹」', en: 'Film director, The Maltese Falcon', es: 'Director, El halcón maltés', zh: '导演《马耳他之鹰》', ko: '영화감독 《몰타의 매》', pt: 'Diretor, O Falcão Maltês' } },
-    { year: '1969', name: { ja: '市川海老蔵', en: 'Ebizo Ichikawa', es: 'Ebizo Ichikawa', zh: '市川海老藏', ko: '이치카와 에비조', pt: 'Ebizo Ichikawa' }, role: { ja: '歌舞伎俳優（日本）', en: 'Kabuki actor (Japan)', es: 'Actor de kabuki (Japón)', zh: '歌舞伎演员（日本）', ko: '가부키 배우 (일본)', pt: 'Ator de kabuki (Japão)' } },
-  ],
-  '8-9': [
-    { year: '1963', name: { ja: 'ホイットニー・ヒューストン', en: 'Whitney Houston', es: 'Whitney Houston', zh: '惠特尼·休斯顿', ko: '휘트니 휴스턴', pt: 'Whitney Houston' }, role: { ja: 'ポップ・R&B歌手', en: 'Pop & R&B singer', es: 'Cantante de pop y R&B', zh: '流行、R&B歌手', ko: '팝·R&B 가수', pt: 'Cantora de pop e R&B' } },
-    { year: '1968', name: { ja: 'ジリアン・アンダーソン', en: 'Gillian Anderson', es: 'Gillian Anderson', zh: '吉莲·安德森', ko: '질리언 앤더슨', pt: 'Gillian Anderson' }, role: { ja: '女優「X-ファイル」', en: 'Actress, The X-Files', es: 'Actriz, Expediente X', zh: '女演员《X档案》', ko: '배우 《X파일》', pt: 'Atriz, Arquivo X' } },
-    { year: '1965', name: { ja: '野茂英雄', en: 'Hideo Nomo', es: 'Hideo Nomo', zh: '野茂英雄', ko: '노모 히데오', pt: 'Hideo Nomo' }, role: { ja: 'プロ野球・MLB投手（日本）', en: 'Baseball pitcher, MLB pioneer (Japan)', es: 'Lanzador de béisbol, pionero de MLB (Japón)', zh: '棒球投手，MLB先驱（日本）', ko: 'MLB 개척자, 야구 투수 (일본)', pt: 'Arremessador de beisebol, pioneiro da MLB (Japão)' } },
-  ],
-  '8-15': [
-    { year: '1769', name: { ja: 'ナポレオン・ボナパルト', en: 'Napoleon Bonaparte', es: 'Napoleón Bonaparte', zh: '拿破仑·波拿巴', ko: '나폴레옹 보나파르트', pt: 'Napoleão Bonaparte' }, role: { ja: 'フランス皇帝・軍事的天才', en: 'French emperor & military genius', es: 'Emperador francés y genio militar', zh: '法国皇帝，军事天才', ko: '프랑스 황제, 군사 천재', pt: 'Imperador francês e gênio militar' } },
-    { year: '1925', name: { ja: 'オスカー・ピーターソン', en: 'Oscar Peterson', es: 'Oscar Peterson', zh: '奥斯卡·彼得森', ko: '오스카 피터슨', pt: 'Oscar Peterson' }, role: { ja: 'ジャズピアニスト', en: 'Jazz pianist', es: 'Pianista de jazz', zh: '爵士钢琴家', ko: '재즈 피아니스트', pt: 'Pianista de jazz' } },
-    { year: '1963', name: { ja: '堀ちえみ', en: 'Chiemi Hori', es: 'Chiemi Hori', zh: '堀千惠美', ko: '호리 치에미', pt: 'Chiemi Hori' }, role: { ja: '歌手・女優（日本）', en: 'Singer & actress (Japan)', es: 'Cantante y actriz (Japón)', zh: '歌手、女演员（日本）', ko: '가수, 배우 (일본)', pt: 'Cantora e atriz (Japão)' } },
-  ],
-  '8-16': [
-    { year: '1958', name: { ja: 'マドンナ', en: 'Madonna', es: 'Madonna', zh: '麦当娜', ko: '마돈나', pt: 'Madonna' }, role: { ja: 'ポップの女王', en: 'Queen of Pop', es: 'Reina del Pop', zh: '流行音乐女王', ko: '팝의 여왕', pt: 'Rainha do Pop' } },
-    { year: '1954', name: { ja: 'ジェームズ・キャメロン', en: 'James Cameron', es: 'James Cameron', zh: '詹姆斯·卡梅隆', ko: '제임스 캐머런', pt: 'James Cameron' }, role: { ja: '映画監督「タイタニック」「アバター」', en: 'Director, Titanic & Avatar', es: 'Director, Titanic y Avatar', zh: '导演《泰坦尼克号》《阿凡达》', ko: '감독 《타이타닉》 《아바타》', pt: 'Diretor, Titanic e Avatar' } },
-    { year: '1962', name: { ja: '中村雅俊', en: 'Masatoshi Nakamura', es: 'Masatoshi Nakamura', zh: '中村雅俊', ko: '나카무라 마사토시', pt: 'Masatoshi Nakamura' }, role: { ja: '俳優・歌手（日本）', en: 'Actor & singer (Japan)', es: 'Actor y cantante (Japón)', zh: '演员、歌手（日本）', ko: '배우, 가수 (일본)', pt: 'Ator e cantor (Japão)' } },
-  ],
-  '8-17': [
-    { year: '1943', name: { ja: 'ロバート・デ・ニーロ', en: 'Robert De Niro', es: 'Robert De Niro', zh: '罗伯特·德尼罗', ko: '로버트 드 니로', pt: 'Robert De Niro' }, role: { ja: '名優「タクシードライバー」', en: 'Actor, Taxi Driver & The Godfather', es: 'Actor, Taxi Driver y El Padrino', zh: '演员《出租车司机》《教父》', ko: '배우 《택시 드라이버》 《대부》', pt: 'Ator, Taxi Driver e O Poderoso Chefão' } },
-    { year: '1892', name: { ja: 'メイ・ウエスト', en: 'Mae West', es: 'Mae West', zh: '梅·韦斯特', ko: '매 웨스트', pt: 'Mae West' }, role: { ja: '女優・コメディアン', en: 'Actress & comedian', es: 'Actriz y comediante', zh: '女演员、喜剧演员', ko: '배우, 코미디언', pt: 'Atriz e comediante' } },
-    { year: '1958', name: { ja: '郷ひろみ', en: 'Hiromi Go', es: 'Hiromi Go', zh: '乡广美', ko: '고 히로미', pt: 'Hiromi Go' }, role: { ja: '歌手・俳優（日本）', en: 'Singer & actor (Japan)', es: 'Cantante y actor (Japón)', zh: '歌手、演员（日本）', ko: '가수, 배우 (일본)', pt: 'Cantor e ator (Japão)' } },
-  ],
-  '8-26': [
-    { year: '1910', name: { ja: 'マザー・テレサ', en: 'Mother Teresa', es: 'Madre Teresa', zh: '特蕾莎修女', ko: '마더 테레사', pt: 'Madre Teresa' }, role: { ja: '人道主義者・ノーベル平和賞受賞', en: 'Humanitarian & Nobel Peace Prize laureate', es: 'Humanitaria y Premio Nobel de la Paz', zh: '人道主义者，诺贝尔和平奖得主', ko: '인도주의자, 노벨 평화상 수상', pt: 'Humanitária e laureada Nobel da Paz' } },
-    { year: '1980', name: { ja: 'マコーレー・カルキン', en: 'Macaulay Culkin', es: 'Macaulay Culkin', zh: '麦考利·克尔金', ko: '매컬리 컬킨', pt: 'Macaulay Culkin' }, role: { ja: '俳優「ホーム・アローン」', en: 'Actor, Home Alone', es: 'Actor, Mi Pobre Angelito', zh: '演员《小鬼当家》', ko: '배우 《나 홀로 집에》', pt: 'Ator, Esqueceram de Mim' } },
-    { year: '1961', name: { ja: '榊原郁恵', en: 'Ikue Sakakibara', es: 'Ikue Sakakibara', zh: '榊原郁恵', ko: '사카키바라 이쿠에', pt: 'Ikue Sakakibara' }, role: { ja: '歌手・女優（日本）', en: 'Singer & actress (Japan)', es: 'Cantante y actriz (Japón)', zh: '歌手、女演员（日本）', ko: '가수, 배우 (일본)', pt: 'Cantora e atriz (Japão)' } },
-  ],
-  '8-29': [
-    { year: '1958', name: { ja: 'マイケル・ジャクソン', en: 'Michael Jackson', es: 'Michael Jackson', zh: '迈克尔·杰克逊', ko: '마이클 잭슨', pt: 'Michael Jackson' }, role: { ja: 'ポップの王様', en: 'King of Pop', es: 'Rey del Pop', zh: '流行音乐之王', ko: '팝의 왕', pt: 'Rei do Pop' } },
-    { year: '1920', name: { ja: 'チャーリー・パーカー', en: 'Charlie Parker', es: 'Charlie Parker', zh: '查理·帕克', ko: '찰리 파커', pt: 'Charlie Parker' }, role: { ja: 'ジャズサックス奏者', en: 'Jazz saxophonist', es: 'Saxofonista de jazz', zh: '爵士萨克斯手', ko: '재즈 색소폰 연주자', pt: 'Saxofonista de jazz' } },
-    { year: '1964', name: { ja: '吉田拓郎', en: 'Takuro Yoshida', es: 'Takuro Yoshida', zh: '吉田拓郎', ko: '요시다 타쿠로', pt: 'Takuro Yoshida' }, role: { ja: 'シンガーソングライター（日本）', en: 'Singer-songwriter (Japan)', es: 'Cantautor (Japón)', zh: '创作歌手（日本）', ko: '싱어송라이터 (일본)', pt: 'Cantor e compositor (Japão)' } },
-  ],
-  '9-5': [
-    { year: '1946', name: { ja: 'フレディ・マーキュリー', en: 'Freddie Mercury', es: 'Freddie Mercury', zh: '弗雷迪·墨丘利', ko: '프레디 머큐리', pt: 'Freddie Mercury' }, role: { ja: 'ロックバンド「クイーン」のボーカル', en: 'Singer of Queen', es: 'Vocalista de Queen', zh: '"皇后乐队"主唱', ko: '퀸의 보컬', pt: 'Vocalista do Queen' } },
-    { year: '1940', name: { ja: 'ラクエル・ウェルチ', en: 'Raquel Welch', es: 'Raquel Welch', zh: '拉蔻儿·薇芝', ko: '라켈 웰치', pt: 'Raquel Welch' }, role: { ja: '女優・モデル', en: 'Actress & model', es: 'Actriz y modelo', zh: '女演员、模特', ko: '배우, 모델', pt: 'Atriz e modelo' } },
-    { year: '1966', name: { ja: '飯島直子', en: 'Naoko Iijima', es: 'Naoko Iijima', zh: '饭岛直子', ko: '이이지마 나오코', pt: 'Naoko Iijima' }, role: { ja: '女優・モデル（日本）', en: 'Actress & model (Japan)', es: 'Actriz y modelo (Japón)', zh: '女演员、模特（日本）', ko: '배우, 모델 (일본)', pt: 'Atriz e modelo (Japão)' } },
-  ],
-  '9-21': [
-    { year: '1866', name: { ja: 'H.G.ウェルズ', en: 'H.G. Wells', es: 'H.G. Wells', zh: 'H.G.威尔斯', ko: 'H.G. 웰스', pt: 'H.G. Wells' }, role: { ja: 'SF作家「宇宙戦争」', en: 'Sci-fi author, The War of the Worlds', es: 'Autor de ciencia ficción, La guerra de los mundos', zh: '科幻作家《世界大战》', ko: 'SF 작가 《우주 전쟁》', pt: 'Autor de ficção científica, A Guerra dos Mundos' } },
-    { year: '1948', name: { ja: 'スティーヴン・キング', en: 'Stephen King', es: 'Stephen King', zh: '斯蒂芬·金', ko: '스티븐 킹', pt: 'Stephen King' }, role: { ja: 'ホラー小説の帝王', en: 'King of Horror novels', es: 'Rey de las novelas de terror', zh: '恐怖小说之王', ko: '공포 소설의 제왕', pt: 'Rei dos romances de terror' } },
-    { year: '1965', name: { ja: '中島みゆき', en: 'Miyuki Nakajima', es: 'Miyuki Nakajima', zh: '中岛美雪', ko: '나카지마 미유키', pt: 'Miyuki Nakajima' }, role: { ja: 'シンガーソングライター（日本）', en: 'Singer-songwriter (Japan)', es: 'Cantautora (Japón)', zh: '创作歌手（日本）', ko: '싱어송라이터 (일본)', pt: 'Cantora e compositora (Japão)' } },
-  ],
-  '9-25': [
-    { year: '1952', name: { ja: 'クリストファー・リーヴ', en: 'Christopher Reeve', es: 'Christopher Reeve', zh: '克里斯托弗·里夫', ko: '크리스토퍼 리브', pt: 'Christopher Reeve' }, role: { ja: '俳優「スーパーマン」', en: 'Actor, Superman', es: 'Actor, Superman', zh: '演员《超人》', ko: '배우 《슈퍼맨》', pt: 'Ator, Superman' } },
-    { year: '1968', name: { ja: 'ウィル・スミス', en: 'Will Smith', es: 'Will Smith', zh: '威尔·史密斯', ko: '윌 스미스', pt: 'Will Smith' }, role: { ja: '俳優・ラッパー', en: 'Actor & rapper', es: 'Actor y rapero', zh: '演员、说唱歌手', ko: '배우, 래퍼', pt: 'Ator e rapper' } },
-    { year: '1961', name: { ja: '小泉今日子', en: 'Kyoko Koizumi', es: 'Kyoko Koizumi', zh: '小泉今日子', ko: '고이즈미 교코', pt: 'Kyoko Koizumi' }, role: { ja: '歌手・女優（日本）', en: 'Singer & actress (Japan)', es: 'Cantante y actriz (Japón)', zh: '歌手、女演员（日本）', ko: '가수, 배우 (일본)', pt: 'Cantora e atriz (Japão)' } },
-  ],
-  '10-2': [
-    { year: '1869', name: { ja: 'マハトマ・ガンジー', en: 'Mahatma Gandhi', es: 'Mahatma Gandhi', zh: '圣雄甘地', ko: '마하트마 간디', pt: 'Mahatma Gandhi' }, role: { ja: 'インド独立運動の指導者', en: 'Leader of Indian independence', es: 'Líder de la independencia india', zh: '印度独立运动领袖', ko: '인도 독립운동 지도자', pt: 'Líder da independência indiana' } },
-    { year: '1890', name: { ja: 'グルーチョ・マルクス', en: 'Groucho Marx', es: 'Groucho Marx', zh: '格劳乔·马克思', ko: '그루초 막스', pt: 'Groucho Marx' }, role: { ja: 'コメディアン', en: 'Comedian', es: 'Comediante', zh: '喜剧演员', ko: '코미디언', pt: 'Comediante' } },
-    { year: '1971', name: { ja: '香取慎吾', en: 'Shingo Katori', es: 'Shingo Katori', zh: '香取慎吾', ko: '가토리 신고', pt: 'Shingo Katori' }, role: { ja: 'SMAP・俳優・アーティスト（日本）', en: 'SMAP member, actor & artist (Japan)', es: 'Miembro de SMAP, actor y artista (Japón)', zh: 'SMAP成员、演员、艺术家（日本）', ko: 'SMAP 멤버, 배우, 아티스트 (일본)', pt: 'Membro do SMAP, ator e artista (Japão)' } },
-  ],
-  '10-9': [
-    { year: '1940', name: { ja: 'ジョン・レノン', en: 'John Lennon', es: 'John Lennon', zh: '约翰·列侬', ko: '존 레논', pt: 'John Lennon' }, role: { ja: 'ミュージシャン「ザ・ビートルズ」・平和活動家', en: 'Musician, The Beatles & peace activist', es: 'Músico, The Beatles y activista por la paz', zh: '"甲壳虫乐队"音乐家、和平活动家', ko: '뮤지션, 비틀즈, 평화 운동가', pt: 'Músico, The Beatles e ativista pela paz' } },
-    { year: '1975', name: { ja: 'ショーン・レノン', en: 'Sean Lennon', es: 'Sean Lennon', zh: '肖恩·列侬', ko: '숀 레논', pt: 'Sean Lennon' }, role: { ja: 'ミュージシャン・ジョン・レノンの息子', en: 'Musician, son of John Lennon', es: 'Músico, hijo de John Lennon', zh: '音乐家，约翰·列侬之子', ko: '뮤지션, 존 레논의 아들', pt: 'Músico, filho de John Lennon' } },
-    { year: '1964', name: { ja: '江口洋介', en: 'Yosuke Eguchi', es: 'Yosuke Eguchi', zh: '江口洋介', ko: '에구치 요스케', pt: 'Yosuke Eguchi' }, role: { ja: '俳優（日本）', en: 'Actor (Japan)', es: 'Actor (Japón)', zh: '演员（日本）', ko: '배우 (일본)', pt: 'Ator (Japão)' } },
-  ],
-  '10-25': [
-    { year: '1881', name: { ja: 'パブロ・ピカソ', en: 'Pablo Picasso', es: 'Pablo Picasso', zh: '巴勃罗·毕加索', ko: '파블로 피카소', pt: 'Pablo Picasso' }, role: { ja: 'キュビズムの画家', en: 'Cubist painter', es: 'Pintor cubista', zh: '立体主义画家', ko: '큐비즘 화가', pt: 'Pintor cubista' } },
-    { year: '1984', name: { ja: 'ケイティ・ペリー', en: 'Katy Perry', es: 'Katy Perry', zh: '凯蒂·佩里', ko: '케이티 페리', pt: 'Katy Perry' }, role: { ja: 'ポップシンガー', en: 'Pop singer', es: 'Cantante pop', zh: '流行歌手', ko: '팝 가수', pt: 'Cantora pop' } },
-    { year: '1972', name: { ja: '仲間由紀恵', en: 'Yukie Nakama', es: 'Yukie Nakama', zh: '仲间由纪惠', ko: '나카마 유키에', pt: 'Yukie Nakama' }, role: { ja: '女優（日本）', en: 'Actress (Japan)', es: 'Actriz (Japón)', zh: '女演员（日本）', ko: '배우 (일본)', pt: 'Atriz (Japão)' } },
-  ],
-  '11-7': [
-    { year: '1867', name: { ja: 'マリー・キュリー', en: 'Marie Curie', es: 'Marie Curie', zh: '玛丽·居里', ko: '마리 퀴리', pt: 'Marie Curie' }, role: { ja: '物理学者・化学者・ノーベル賞を2度受賞', en: 'Physicist & chemist, two-time Nobel laureate', es: 'Física y química, dos veces Premio Nobel', zh: '物理学家、化学家，两度诺贝尔奖得主', ko: '물리학자·화학자, 노벨상 2회 수상', pt: 'Física e química, duas vezes laureada Nobel' } },
-    { year: '1943', name: { ja: 'ジョニ・ミッチェル', en: 'Joni Mitchell', es: 'Joni Mitchell', zh: '琼妮·米切尔', ko: '조니 미첼', pt: 'Joni Mitchell' }, role: { ja: 'シンガーソングライター', en: 'Singer-songwriter', es: 'Cantautora', zh: '创作型歌手', ko: '싱어송라이터', pt: 'Cantora e compositora' } },
-    { year: '1967', name: { ja: '田村正和', en: 'Masakazu Tamura', es: 'Masakazu Tamura', zh: '田村正和', ko: '다무라 마사카즈', pt: 'Masakazu Tamura' }, role: { ja: '俳優（日本）', en: 'Actor (Japan)', es: 'Actor (Japón)', zh: '演员（日本）', ko: '배우 (일본)', pt: 'Ator (Japão)' } },
-  ],
-  '11-11': [
-    { year: '1821', name: { ja: 'フョードル・ドストエフスキー', en: 'Fyodor Dostoevsky', es: 'Fiódor Dostoyevski', zh: '费奥多尔·陀思妥耶夫斯基', ko: '표도르 도스토옙스키', pt: 'Fyodor Dostoevsky' }, role: { ja: 'ロシアの文豪「罪と罰」', en: 'Russian novelist, Crime and Punishment', es: 'Novelista ruso, Crimen y castigo', zh: '俄国文豪《罪与罚》', ko: '러시아 소설가 《죄와 벌》', pt: 'Romancista russo, Crime e Castigo' } },
-    { year: '1974', name: { ja: 'レオナルド・ディカプリオ', en: 'Leonardo DiCaprio', es: 'Leonardo DiCaprio', zh: '莱昂纳多·迪卡普里奥', ko: '레오나르도 디카프리오', pt: 'Leonardo DiCaprio' }, role: { ja: '俳優「タイタニック」「レヴェナント」', en: 'Actor, Titanic & The Revenant', es: 'Actor, Titanic y El renacido', zh: '演员《泰坦尼克号》《荒野猎人》', ko: '배우 《타이타닉》 《레버넌트》', pt: 'Ator, Titanic e O Regresso' } },
-    { year: '1966', name: { ja: '中山美穂', en: 'Miho Nakayama', es: 'Miho Nakayama', zh: '中山美穗', ko: '나카야마 미호', pt: 'Miho Nakayama' }, role: { ja: '歌手・女優（日本）', en: 'Singer & actress (Japan)', es: 'Cantante y actriz (Japón)', zh: '歌手、女演员（日本）', ko: '가수, 배우 (일본)', pt: 'Cantora e atriz (Japão)' } },
-  ],
-  '11-30': [
-    { year: '1835', name: { ja: 'マーク・トウェイン', en: 'Mark Twain', es: 'Mark Twain', zh: '马克·吐温', ko: '마크 트웨인', pt: 'Mark Twain' }, role: { ja: '作家「トム・ソーヤーの冒険」', en: 'Author, The Adventures of Tom Sawyer', es: 'Autor, Las aventuras de Tom Sawyer', zh: '作家《汤姆·索亚历险记》', ko: '소설가 《톰 소여의 모험》', pt: 'Autor, As Aventuras de Tom Sawyer' } },
-    { year: '1874', name: { ja: 'ウィンストン・チャーチル', en: 'Winston Churchill', es: 'Winston Churchill', zh: '温斯顿·丘吉尔', ko: '윈스턴 처칠', pt: 'Winston Churchill' }, role: { ja: 'イギリス首相・第二次世界大戦の英雄', en: 'British Prime Minister & WWII hero', es: 'Primer Ministro británico y héroe de la WWII', zh: '英国首相、二战英雄', ko: '영국 수상, 2차 세계대전의 영웅', pt: 'Primeiro-Ministro britânico e herói da WWII' } },
-    { year: '1960', name: { ja: '高橋惠子', en: 'Keiko Takahashi', es: 'Keiko Takahashi', zh: '高桥惠子', ko: '다카하시 케이코', pt: 'Keiko Takahashi' }, role: { ja: '女優（日本）', en: 'Actress (Japan)', es: 'Actriz (Japón)', zh: '女演员（日本）', ko: '배우 (일본)', pt: 'Atriz (Japão)' } },
-  ],
-  '12-5': [
-    { year: '1901', name: { ja: 'ウォルト・ディズニー', en: 'Walt Disney', es: 'Walt Disney', zh: '沃尔特·迪士尼', ko: '월트 디즈니', pt: 'Walt Disney' }, role: { ja: 'アニメーターと夢の国の創造者', en: 'Animator & creator of the Magic Kingdom', es: 'Animador y creador del Reino Mágico', zh: '动画师，梦幻王国创造者', ko: '애니메이터, 매직 킹덤 창조자', pt: 'Animador e criador do Reino Mágico' } },
-    { year: '1932', name: { ja: 'リトル・リチャード', en: 'Little Richard', es: 'Little Richard', zh: '小理查德', ko: '리틀 리처드', pt: 'Little Richard' }, role: { ja: 'ロックンロールのパイオニア', en: 'Rock and roll pioneer', es: 'Pionero del rock and roll', zh: '摇滚乐先驱', ko: '로큰롤의 개척자', pt: 'Pioneiro do rock and roll' } },
-    { year: '1957', name: { ja: '美空ひばり', en: 'Hibari Misora', es: 'Hibari Misora', zh: '美空云雀', ko: '미소라 히바리', pt: 'Hibari Misora' }, role: { ja: '昭和の歌姫（日本）', en: 'Showa era singing legend (Japan)', es: 'Leyenda del canto de la era Showa (Japón)', zh: '昭和歌坛女王（日本）', ko: '쇼와 시대의 가요 여왕 (일본)', pt: 'Lenda do canto da era Showa (Japão)' } },
-  ],
-  '12-16': [
-    { year: '1770', name: { ja: 'ルートヴィヒ・ヴァン・ベートーヴェン', en: 'Ludwig van Beethoven', es: 'Ludwig van Beethoven', zh: '路德维希·范·贝多芬', ko: '루트비히 판 베토벤', pt: 'Ludwig van Beethoven' }, role: { ja: '古典派・ロマン派の大作曲家', en: 'Classical & Romantic era composer', es: 'Compositor del clasicismo y romanticismo', zh: '古典主义、浪漫主义大作曲家', ko: '고전·낭만주의 위대한 작곡가', pt: 'Compositor do classicismo e romantismo' } },
-    { year: '1775', name: { ja: 'ジェーン・オースティン', en: 'Jane Austen', es: 'Jane Austen', zh: '简·奥斯汀', ko: '제인 오스틴', pt: 'Jane Austen' }, role: { ja: '小説家「高慢と偏見」', en: 'Novelist, Pride and Prejudice', es: 'Novelista, Orgullo y prejuicio', zh: '小说家《傲慢与偏见》', ko: '소설가 《오만과 편견》', pt: 'Romancista, Orgulho e Preconceito' } },
-    { year: '1971', name: { ja: '高橋克典', en: 'Katsunori Takahashi', es: 'Katsunori Takahashi', zh: '高桥克典', ko: '다카하시 가쓰노리', pt: 'Katsunori Takahashi' }, role: { ja: '俳優・歌手（日本）', en: 'Actor & singer (Japan)', es: 'Actor y cantante (Japón)', zh: '演员、歌手（日本）', ko: '배우, 가수 (일본)', pt: 'Ator e cantor (Japão)' } },
-  ],
-  '12-25': [
-    { year: '1887', name: { ja: 'コンラッド・ヒルトン', en: 'Conrad Hilton', es: 'Conrad Hilton', zh: '康拉德·希尔顿', ko: '콘래드 힐턴', pt: 'Conrad Hilton' }, role: { ja: 'ホテル王・ヒルトンホテル創業者', en: 'Hotelier & founder of Hilton Hotels', es: 'Hotelero y fundador de los Hoteles Hilton', zh: '酒店大王、希尔顿酒店创始人', ko: '호텔왕, 힐튼 호텔 창업자', pt: 'Hoteleiro e fundador dos Hotéis Hilton' } },
-    { year: '1954', name: { ja: 'アニー・レノックス', en: 'Annie Lennox', es: 'Annie Lennox', zh: '安妮·莱诺克斯', ko: '애니 레녹스', pt: 'Annie Lennox' }, role: { ja: 'シンガー「ユーリズミックス」', en: 'Singer, Eurythmics', es: 'Cantante, Eurythmics', zh: '歌手"舞韵合唱团"', ko: '싱어, 유리스믹스', pt: 'Cantora, Eurythmics' } },
-    { year: '1966', name: { ja: '高橋由美子', en: 'Yumiko Takahashi', es: 'Yumiko Takahashi', zh: '高桥由美子', ko: '다카하시 유미코', pt: 'Yumiko Takahashi' }, role: { ja: '歌手・女優（日本）', en: 'Singer & actress (Japan)', es: 'Cantante y actriz (Japón)', zh: '歌手、女演员（日本）', ko: '가수, 배우 (일본)', pt: 'Cantora e atriz (Japão)' } },
-  ],
-  // ═══ 新規追加データここから ═══
-  // ═══ 既存データ（元のbirthdays.jsより） ═══
   '1-1':  [{ type: 'happy', year: '1863', text: { ja: '奴隷解放宣言が発効し、アメリカの奴隷制廃止に向けた大きな一歩となった', en: 'The Emancipation Proclamation took effect, a major step toward abolishing slavery in America' } }, { type: 'happy', year: '1993', text: { ja: 'チェコスロバキアが平和的に2つの国家に分離（ビロード離婚）', en: 'Czechoslovakia peacefully split into two nations (the Velvet Divorce)' } }],
   '1-15': [{ type: 'sad', year: '1919', text: { ja: 'ベルリン蜂起が鎮圧され、多くの革命家が命を落とした', en: 'The Spartacist uprising in Berlin was crushed, and many revolutionaries lost their lives' } }, { type: 'happy', year: '2001', text: { ja: 'ウィキペディアが設立され、世界中の人々が知識を共有できるようになった', en: 'Wikipedia was founded, enabling people worldwide to share knowledge freely' } }],
   '1-17': [{ type: 'sad', year: '1995', text: { ja: '阪神・淡路大震災が発生し、約6,400人の命が失われた', en: 'The Great Hanshin earthquake struck Japan, claiming about 6,400 lives' } }, { type: 'happy', year: '1991', text: { ja: '湾岸戦争の多国籍軍によるイラク攻撃作戦が開始された', en: 'Operation Desert Storm began, leading to the liberation of Kuwait' } }],
@@ -2712,6 +2480,24 @@ export const historicalEvents = {
   '7-22': [{ type: 'happy', year: '2011', text: { ja: 'ノルウェーのウトヤ島の悲劇の後、国民が「愛でヘイトに応える」と団結した', en: 'After the Utøya tragedy, Norwegians united proclaiming "We will answer hatred with love"' } }, { type: 'sad', year: '2011', text: { ja: 'ノルウェーでテロ攻撃が起き、77人が命を落とした', en: 'A terrorist attack struck Norway, killing 77 people in the deadliest attack since WWII' } }],
   '7-25': [{ type: 'happy', year: '1978', text: { ja: '世界初の試験管ベビー、ルイーズ・ブラウンが誕生し、医学の新時代が始まった', en: 'Louise Brown, the world\'s first IVF baby, was born, beginning a new era in medicine' } }, { type: 'sad', year: '2000', text: { ja: 'エールフランス4590便がパリで墜落し、113人が命を落とした', en: 'Air France Flight 4590 crashed near Paris, killing all 113 people on board' } }],
   '7-26': [{ type: 'happy', year: '1990', text: { ja: 'アメリカで障害者権利法（ADA）が成立し、障害者の権利が守られた', en: 'The Americans with Disabilities Act was signed, protecting the rights of people with disabilities' } }, { type: 'sad', year: '1952', text: { ja: 'エジプトのファルーク王が革命で退位を余儀なくされた', en: 'Egypt\'s King Farouk was forced to abdicate following a revolution' } }],
+  '1-8':  [{ type: 'happy', year: '1935', text: { ja: 'エルヴィス・プレスリーが生まれ、後にロックの王様として世界を熱狂させた', en: 'Elvis Presley was born, destined to become the King of Rock and Roll' } }, { type: 'sad', year: '2011', text: { ja: 'ガブリエル・ギフォーズ米下院議員が銃撃され、6人が命を落とした', en: 'U.S. Representative Gabrielle Giffords was shot, and 6 people were killed' } }],
+  '1-29': [{ type: 'happy', year: '1954', text: { ja: 'オプラ・ウィンフリーが生まれ、後に世界最も影響力のある女性の一人となった', en: 'Oprah Winfrey was born, destined to become one of the world\'s most influential women' } }, { type: 'sad', year: '1996', text: { ja: 'チェチェン紛争で多くの市民が犠牲になった', en: 'Many civilians were killed in the ongoing Chechen conflict' } }],
+  '2-17': [{ type: 'happy', year: '1963', text: { ja: 'マイケル・ジョーダンが生まれ、後にバスケットボールの神様となった', en: 'Michael Jordan was born, destined to become the greatest basketball player of all time' } }, { type: 'sad', year: '2008', text: { ja: 'コソボがセルビアから独立を宣言し、地域の緊張が高まった', en: 'Kosovo declared independence from Serbia, raising regional tensions' } }],
+  '3-6':  [{ type: 'happy', year: '1475', text: { ja: 'ミケランジェロが生まれ、後に「ダビデ像」「システィーナ礼拝堂」などの傑作を生んだ', en: 'Michelangelo was born, destined to create masterpieces like David and the Sistine Chapel' } }, { type: 'sad', year: '1836', text: { ja: 'アラモの戦いでテキサス独立軍が全滅した', en: 'The defenders of the Alamo were killed in battle' } }],
+  '3-25': [{ type: 'happy', year: '1942', text: { ja: 'アレサ・フランクリンが生まれ、後にソウルの女王として音楽史に名を刻んだ', en: 'Aretha Franklin was born, destined to become the Queen of Soul' } }, { type: 'sad', year: '1911', text: { ja: 'ニューヨークのトライアングル工場火災で146人の労働者が命を落とした', en: 'The Triangle Shirtwaist Factory fire killed 146 workers in New York City' } }],
+  '4-2':  [{ type: 'happy', year: '1939', text: { ja: '宮崎駿が生まれ、後にスタジオジブリで世界中に愛される作品を生み出した', en: 'Hayao Miyazaki was born, destined to create beloved anime films at Studio Ghibli' } }, { type: 'sad', year: '1982', text: { ja: 'アルゼンチンがフォークランド諸島に侵攻し、英アルゼンチン戦争が始まった', en: 'Argentina invaded the Falkland Islands, beginning the Falklands War' } }],
+  '4-13': [{ type: 'happy', year: '1743', text: { ja: 'トーマス・ジェファーソンが生まれ、後にアメリカ独立宣言を起草した', en: 'Thomas Jefferson was born, destined to draft the American Declaration of Independence' } }, { type: 'sad', year: '1919', text: { ja: 'インドのアムリトサルで英国軍が平和的なデモ隊に発砲し、約400人が命を落とした', en: 'British troops fired on peaceful protesters in Amritsar, India, killing about 400 people' } }],
+  '5-24': [{ type: 'happy', year: '1941', text: { ja: 'ボブ・ディランが生まれ、後にノーベル文学賞を受賞したシンガーソングライターとなった', en: 'Bob Dylan was born, destined to become a Nobel Prize-winning singer-songwriter' } }, { type: 'sad', year: '1941', text: { ja: 'イギリスの戦艦フッドがドイツ戦艦ビスマルクに撃沈され、1,415人が命を落とした', en: 'British warship HMS Hood was sunk by the German battleship Bismarck, killing 1,415 sailors' } }],
+  '6-1':  [{ type: 'happy', year: '1926', text: { ja: 'マリリン・モンローが生まれ、後に20世紀最大のアイコンの一人となった', en: 'Marilyn Monroe was born, destined to become one of the greatest icons of the 20th century' } }, { type: 'sad', year: '2010', text: { ja: 'イスラエル軍がガザ支援船団を急襲し、9人が命を落とした', en: 'Israeli forces stormed a Gaza aid flotilla, killing 9 people and sparking international condemnation' } }],
+  '6-18': [{ type: 'happy', year: '1942', text: { ja: 'ポール・マッカートニーが生まれ、後にビートルズのメンバーとして音楽史を変えた', en: 'Paul McCartney was born, destined to change music history as a member of The Beatles' } }, { type: 'sad', year: '1815', text: { ja: 'ワーテルローの戦いでナポレオンが敗れ、その時代が終わった', en: 'Napoleon was defeated at the Battle of Waterloo, ending his era' } }],
+  '8-29': [{ type: 'happy', year: '1958', text: { ja: 'マイケル・ジャクソンが生まれ、後にポップの王様として世界中を魅了した', en: 'Michael Jackson was born, destined to become the King of Pop and captivate the world' } }, { type: 'sad', year: '2005', text: { ja: 'ハリケーン・カトリーナがニューオーリンズに上陸し、1,800人以上が命を落とした', en: 'Hurricane Katrina struck New Orleans, killing over 1,800 people in one of America\'s worst disasters' } }],
+  '9-5':  [{ type: 'happy', year: '1946', text: { ja: 'フレディ・マーキュリーが生まれ、後にクイーンのボーカルとして伝説となった', en: 'Freddie Mercury was born, destined to become a legendary vocalist with Queen' } }, { type: 'sad', year: '1972', text: { ja: 'ミュンヘン五輪でパレスチナ過激派がイスラエル選手団を人質にし、11人が命を落とした', en: 'Palestinian militants took Israeli athletes hostage at the Munich Olympics, killing 11 people' } }],
+  '9-21': [{ type: 'happy', year: '1948', text: { ja: 'スティーヴン・キングが生まれ、後にホラー小説の帝王となった', en: 'Stephen King was born, destined to become the King of Horror' } }, { type: 'sad', year: '1981', text: { ja: 'エジプトとイスラエルの平和条約後も中東の緊張が続いた', en: 'Tensions in the Middle East continued despite the Egypt-Israel peace treaty' } }],
+  '9-25': [{ type: 'happy', year: '1968', text: { ja: 'ウィル・スミスが生まれ、後にハリウッドを代表する俳優となった', en: 'Will Smith was born, destined to become one of Hollywood\'s biggest stars' } }, { type: 'sad', year: '1066', text: { ja: 'スタンフォード・ブリッジの戦いでイングランドがノルウェー軍を撃破したが、その後ノルマン侵攻が始まった', en: 'England defeated Norway at Stamford Bridge, but the Norman invasion followed days later' } }],
+  '10-25': [{ type: 'happy', year: '1881', text: { ja: 'パブロ・ピカソが生まれ、後に20世紀最大の芸術家となった', en: 'Pablo Picasso was born, destined to become the greatest artist of the 20th century' } }, { type: 'sad', year: '1415', text: { ja: 'アジャンクールの戦いでイングランドがフランス軍を圧倒したが、多くの命が失われた', en: 'England overwhelmed France at Agincourt, but many lives were lost on both sides' } }],
+  '11-7': [{ type: 'happy', year: '1867', text: { ja: 'マリー・キュリーが生まれ、後にノーベル賞を2度受賞した科学史上初の女性となった', en: 'Marie Curie was born, destined to become the first woman to win two Nobel Prizes' } }, { type: 'sad', year: '1917', text: { ja: 'ロシア革命（十月革命）が起き、ロマノフ朝が倒れた', en: 'The Russian Revolution overthrew the Romanov dynasty, changing world history' } }],
+  '12-5': [{ type: 'happy', year: '1901', text: { ja: 'ウォルト・ディズニーが生まれ、後に夢の国を創り世界中の子どもたちを魅了した', en: 'Walt Disney was born, destined to create the Magic Kingdom and enchant children worldwide' } }, { type: 'sad', year: '1945', text: { ja: 'フライト19（米海軍の飛行部隊）がバミューダトライアングル付近で消息を絶った', en: 'Flight 19, a US Navy training mission, disappeared near the Bermuda Triangle' } }],
+  '12-16': [{ type: 'happy', year: '1770', text: { ja: 'ベートーヴェンが生まれ、後に「第九」など不朽の名作を生み出した', en: 'Beethoven was born, destined to compose immortal works like the Ninth Symphony' } }, { type: 'sad', year: '1944', text: { ja: 'バルジの戦いが始まり、第二次世界大戦最後の大規模ドイツ軍攻勢となった', en: 'The Battle of the Bulge began, Germany\'s last major offensive in WWII' } }],
 
 };
 
