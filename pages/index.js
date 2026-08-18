@@ -1,11 +1,11 @@
-// pages/birthday/index.js
-// トップページ → 今日の日付・ブラウザ言語に自動リダイレクト
+// pages/index.js
+// サイトルート（/）→ /birthday/ にリダイレクト
 
 import { useEffect } from 'react';
 import { useRouter } from 'next/router';
-import { supportedLangs } from '../../data/birthdays';
+import { supportedLangs } from '../data/birthdays';
 
-export default function BirthdayIndex() {
+export default function Home() {
   const router = useRouter();
 
   useEffect(() => {
@@ -22,5 +22,18 @@ export default function BirthdayIndex() {
     router.replace(`/birthday/${lang}/${month}/${day}`);
   }, []);
 
-  return null;
+  // SEO用のローディング表示（一瞬だけ表示される）
+  return (
+    <div style={{
+      minHeight: '100vh',
+      background: '#0d0d1a',
+      display: 'flex',
+      alignItems: 'center',
+      justifyContent: 'center',
+      color: '#e8c84a',
+      fontSize: '24px',
+    }}>
+      🎂
+    </div>
+  );
 }
