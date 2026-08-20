@@ -1,5 +1,5 @@
 import Head from 'next/head';
-import { useEffect, useState } from 'react';
+import { useEffect, useState, useRef } from 'react';
 import {
   getZodiac,
   birthstones,
@@ -11,6 +11,7 @@ import {
   supportedLangs,
   langNames,
 } from '../../../../data/birthdays';
+import { happyMessages } from '../../../../data/happyMessages';
 
 // ── Static Paths & Props ──────────────────────────────────
 export async function getStaticPaths() {
@@ -43,14 +44,157 @@ export async function getStaticProps({ params }) {
   const flower  = birthflowers[m];
   const famous  = famousPeople[key] || null;
   const history = historicalEvents[key] || null;
+  const happyMsg = happyMessages[key] || null;
 
   return {
-    props: { lang, month: m, day: d, zodiac, stone, flower, famous, history },
+    props: { lang, month: m, day: d, zodiac, stone, flower, famous, history, happyMsg },
   };
 }
 
+// ── Happy Message Button Component ────────────────────────
+function HappyMessageBox({ happyMsg, lang }) {
+  const [isOpen, setIsOpen] = useState(false);
+  const layerRef = useRef(null);
+
+  const EMOJIS = ['🌸','⭐','🌼','💛','🌺','✨','🌻','💕','🌷','💫','🌟','🎀'];
+
+  const btnLabels = {
+    ja: '🎁 あなただけの幸せメッセージ',
+    en: '🎁 Your Special Happy Message',
+    es: '🎁 Tu Mensaje Especial de Felicidad',
+    zh: '🎁 属于你的幸福留言',
+    ko: '🎁 당신만을 위한 행복 메시지',
+    pt: '🎁 Sua Mensagem Especial de Felicidade',
+  };
+
+  const msgLabel = {
+    ja: '✦ あなたへのメッセージ ✦',
+    en: '✦ YOUR HAPPY MESSAGE ✦',
+    es: '✦ TU MENSAJE FELIZ ✦',
+    zh: '✦ 专属于你的留言 ✦',
+    ko: '✦ 당신을 위한 메시지 ✦',
+    pt: '✦ SUA MENSAGEM FELIZ ✦',
+  };
+
+  function spawnParticles() {
+    const layer = layerRef.current;
+    if (!layer) return;
+    layer.innerHTML = '';
+    for (let i = 0; i < 50; i++) {
+      setTimeout(() => {
+        if (!layer) return;
+        const el = document.createElement('div');
+        const size = Math.random() * 8 + 10;
+        const duration = Math.random() * 2.5 + 2;
+        const delay = Math.random() * 1.5;
+        el.textContent = EMOJIS[Math.floor(Math.random() * EMOJIS.length)];
+        el.style.cssText = `
+          position:absolute;
+          left:${Math.random()*100}%;
+          top:-30px;
+          font-size:${size}px;
+          animation:happyFall ${duration}s ${delay}s linear forwards;
+          opacity:0;
+          pointer-events:none;
+        `;
+        el.addEventListener('animationend', () => el.remove());
+        layer.appendChild(el);
+      }, i * 30);
+    }
+  }
+
+  function toggle() {
+    const next = !isOpen;
+    setIsOpen(next);
+    if (next) spawnParticles();
+  }
+
+  if (!happyMsg) return null;
+
+  return (
+    <>
+      <style>{`
+        @keyframes happyFall {
+          0%   { transform: translateY(0) rotate(0deg); opacity: 1; }
+          80%  { opacity: 1; }
+          100% { transform: translateY(100vh) rotate(720deg); opacity: 0; }
+        }
+        .happy-btn {
+          width: 100%;
+          padding: 18px;
+          border-radius: 16px;
+          border: 1.5px solid rgba(232,200,74,0.4);
+          background: rgba(255,255,255,0.04);
+          cursor: pointer;
+          font-size: 15px;
+          font-weight: 500;
+          color: #f5f0e8;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          gap: 10px;
+          transition: all 0.3s;
+          font-family: 'Noto Sans JP', sans-serif;
+          margin-bottom: 0;
+        }
+        .happy-btn:hover { border-color: #e8c84a; background: rgba(232,200,74,0.06); }
+        .happy-btn.open  { border-color: #e8c84a; background: rgba(232,200,74,0.06); }
+        .happy-chevron { transition: transform 0.4s; font-size: 12px; color: #8a8aaa; }
+        .happy-chevron.open { transform: rotate(180deg); }
+        .happy-box {
+          overflow: hidden;
+          max-height: 0;
+          opacity: 0;
+          transition: max-height 0.7s ease, opacity 0.5s ease, margin 0.3s ease;
+          margin-top: 0;
+        }
+        .happy-box.open {
+          max-height: 600px;
+          opacity: 1;
+          margin-top: 16px;
+        }
+        .happy-inner {
+          padding: 32px 28px;
+          border-radius: 16px;
+          border: 1px solid rgba(232,200,74,0.35);
+          background: rgba(255,255,255,0.04);
+          text-align: center;
+        }
+        .happy-icon { font-size: 40px; margin-bottom: 14px; animation: float 3s ease-in-out infinite; }
+        .happy-label { font-size: 11px; letter-spacing: 0.2em; color: #e8c84a; margin-bottom: 18px; }
+        .happy-main { font-size: 15px; line-height: 2.2; color: #f5f0e8; margin-bottom: 14px; }
+        .happy-sub  { font-size: 12px; color: #8a8aaa; line-height: 1.9; margin-bottom: 8px; }
+      `}</style>
+
+      <div style={{ position: 'relative', marginBottom: 48 }}>
+        {/* パーティクルレイヤー */}
+        <div
+          ref={layerRef}
+          style={{ position: 'fixed', top: 0, left: 0, width: '100%', height: '100%', pointerEvents: 'none', zIndex: 9999, overflow: 'hidden' }}
+        />
+
+        <button className={`happy-btn${isOpen ? ' open' : ''}`} onClick={toggle}>
+          <span>{btnLabels[lang] || btnLabels.en}</span>
+          <span className={`happy-chevron${isOpen ? ' open' : ''}`}>▼</span>
+        </button>
+
+        <div className={`happy-box${isOpen ? ' open' : ''}`}>
+          <div className="happy-inner">
+            <div className="happy-icon">🌟</div>
+            <div className="happy-label">{msgLabel[lang] || msgLabel.en}</div>
+            <div className="happy-main">{happyMsg[lang] || happyMsg.en}</div>
+            {lang !== 'en' && happyMsg.en && (
+              <div className="happy-sub">{happyMsg.en}</div>
+            )}
+          </div>
+        </div>
+      </div>
+    </>
+  );
+}
+
 // ── Component ─────────────────────────────────────────────
-export default function BirthdayPage({ lang, month, day, zodiac, stone, flower, famous, history }) {
+export default function BirthdayPage({ lang, month, day, zodiac, stone, flower, famous, history, happyMsg }) {
   const t = messages[lang] || messages['en'];
   const [mounted, setMounted] = useState(false);
 
@@ -83,8 +227,6 @@ export default function BirthdayPage({ lang, month, day, zodiac, stone, flower, 
         <meta name="description" content={pageDesc} />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <link rel="canonical" href={canonicalUrl} />
-
-        {/* OGP */}
         <meta property="og:type" content="website" />
         <meta property="og:url" content={canonicalUrl} />
         <meta property="og:title" content={pageTitle} />
@@ -94,19 +236,15 @@ export default function BirthdayPage({ lang, month, day, zodiac, stone, flower, 
         <meta property="og:image:height" content="630" />
         <meta property="og:site_name" content="Birthday World" />
         <meta property="og:locale" content={lang === 'ja' ? 'ja_JP' : lang === 'zh' ? 'zh_CN' : lang === 'ko' ? 'ko_KR' : lang === 'pt' ? 'pt_BR' : lang === 'es' ? 'es_ES' : 'en_US'} />
-
-        {/* Twitter Card */}
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:title" content={pageTitle} />
         <meta name="twitter:description" content={pageDesc} />
         <meta name="twitter:image" content={ogpImage} />
-
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link
           href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Noto+Sans+JP:wght@300;400;500&display=swap"
           rel="stylesheet"
         />
-        {/* Google AdSense */}
         <script
           async
           src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7572849961321548"
@@ -215,6 +353,7 @@ export default function BirthdayPage({ lang, month, day, zodiac, stone, flower, 
           </>
         )}
 
+        {/* AdSense */}
         <div style={styles.giftSection}>
           <div style={styles.giftHeader}>
             <span style={{ fontSize: 36 }}>✨</span>
@@ -234,6 +373,9 @@ export default function BirthdayPage({ lang, month, day, zodiac, stone, flower, 
             />
           </div>
         </div>
+
+        {/* ★ 幸せメッセージ（AdSenseの下） */}
+        <HappyMessageBox happyMsg={happyMsg} lang={lang} />
 
         <div style={styles.miracleSection}>
           <div style={styles.miracleInner}>
@@ -273,6 +415,11 @@ export default function BirthdayPage({ lang, month, day, zodiac, stone, flower, 
           <p style={{ marginTop: 6 }}>
             <a href="/privacy" style={{ color: '#44445a', textDecoration: 'none' }}>
               プライバシーポリシー / Privacy Policy
+            </a>
+          </p>
+          <p style={{ marginTop: 6 }}>
+            <a href="/contact" style={{ color: '#44445a', textDecoration: 'none' }}>
+              お問い合わせ / Contact
             </a>
           </p>
         </footer>
