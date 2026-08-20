@@ -1,0 +1,81 @@
+name: Daily Birthday Tweet
+
+on:
+  schedule:
+    - cron: '0 0 * * *'  # 毎日UTC 0時（日本時間9時）
+  workflow_dispatch:      # 手動実行も可能
+
+jobs:
+  tweet:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Tweet birthday messages
+        env:
+          API_KEY: ${{ secrets.TWITTER_API_KEY }}
+          API_SECRET: ${{ secrets.TWITTER_API_SECRET }}
+          ACCESS_TOKEN: ${{ secrets.TWITTER_ACCESS_TOKEN }}
+          ACCESS_TOKEN_SECRET: ${{ secrets.TWITTER_ACCESS_TOKEN_SECRET }}
+        run: |
+          npm install oauth-1.0a crypto-js
+          node << 'EOF'
+          const OAuth = require('oauth-1.0a');
+          const crypto = require('crypto');
+          const https = require('https');
+
+          const oauth = OAuth({
+            consumer: { key: process.env.API_KEY, secret: process.env.API_SECRET },
+            signature_method: 'HMAC-SHA1',
+            hash_function(base, key) {
+              return crypto.createHmac('sha1', key).update(base).digest('base64');
+            }
+          });
+
+          const token = {
+            key: process.env.ACCESS_TOKEN,
+            secret: process.env.ACCESS_TOKEN_SECRET
+          };
+
+          const now = new Date();
+          const month = String(now.getUTCMonth() + 1).padStart(2, '0');
+          const day = String(now.getUTCDate()).padStart(2, '0');
+          const url = `https://birthday-world-theta.vercel.app/birthday/ja/${month}/${day}`;
+
+          const messages = [
+            `🎂 ${now.getUTCMonth()+1}月${now.getUTCDate()}日生まれのみなさん、お誕生日おめでとうございます！\n世界中からお祝いを届けます🌍\n${url}\n#誕生日おめでとう #HappyBirthday`,
+            `🎉 Happy Birthday to everyone born on ${now.toLocaleString('en', {month:'long'})} ${now.getUTCDate()}!\nCelebrating you from around the world 🌏\n${url}\n#HappyBirthday #Birthday`,
+            `🎂 ¡Feliz cumpleaños a todos los nacidos hoy!\nCelebramos desde todo el mundo 🌍\n${url}\n#FelizCumpleaños #HappyBirthday`
+          ];
+
+          async function postTweet(text) {
+            return new Promise((resolve, reject) => {
+              const requestData = { url: 'https://api.twitter.com/2/tweets', method: 'POST' };
+              const authHeader = oauth.toHeader(oauth.authorize(requestData, token));
+              const body = JSON.stringify({ text });
+              const options = {
+                hostname: 'api.twitter.com',
+                path: '/2/tweets',
+                method: 'POST',
+                headers: {
+                  ...authHeader,
+                  'Content-Type': 'application/json',
+                  'Content-Length': Buffer.byteLength(body)
+                }
+              };
+              const req = https.request(options, res => {
+                let data = '';
+                res.on('data', chunk => data += chunk);
+                res.on('end', () => { console.log(data); resolve(data); });
+              });
+              req.on('error', reject);
+              req.write(body);
+              req.end();
+            });
+          }
+
+          (async () => {
+            for (const msg of messages) {
+              await postTweet(msg);
+              await new Promise(r => setTimeout(r, 3000));
+            }
+          })();
+          EOF
