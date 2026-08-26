@@ -192,7 +192,190 @@ function HappyMessageBox({ happyMsg, lang }) {
     </>
   );
 }
+// ── ShareSection コンポーネント ────────────────────────────
+// [day].js の shareArea 部分をこれに置き換える
 
+function ShareSection({ lang, month, day, happyMsg }) {
+  const [userMsg, setUserMsg] = useState('');
+
+  const monthEn = ['','January','February','March','April','May','June','July','August','September','October','November','December'];
+  const monthJa = ['','1月','2月','3月','4月','5月','6月','7月','8月','9月','10月','11月','12月'];
+
+  const dateLabel = lang === 'ja'
+    ? `${monthJa[month]}${day}日`
+    : `${monthEn[month]} ${day}`;
+
+  const pageUrl = `https://birthday-world-theta.vercel.app/birthday/${lang}/${String(month).padStart(2,'0')}/${String(day).padStart(2,'0')}`;
+
+  // 言語別テキスト
+  const ui = {
+    ja: {
+      placeholder: '一言メッセージを入れてみよう（例：誕生日おめでとう！）',
+      sendLabel: 'あなたも誰かの誕生日を祝ってあげましょう🎂',
+      lineBtn: '💚 LINEで送る',
+      xBtn: '𝕏 Xでシェア',
+      lineMsg: (msg) =>
+        `🎂 ${dateLabel}生まれのあなたへ\n\n${msg ? msg + '\n\n' : ''}✨ 誕生花・誕生石・今日生まれの有名人、そして特別なメッセージが届いています🌸\n\n▶ ${pageUrl}\n\n#誕生日おめでとう #HappyBirthday`,
+      xMsg: (msg) =>
+        `🎂 ${dateLabel}生まれのあなたへ${msg ? '\n\n' + msg : ''}\n\n誕生花・誕生石・今日生まれの有名人✨\n▶ ${pageUrl}\n\n#誕生日おめでとう #HappyBirthday #BirthdayWorld`,
+    },
+    en: {
+      placeholder: 'Add a personal message (e.g. Happy Birthday! Thinking of you!)',
+      sendLabel: 'Share the love with someone born today 🎂',
+      lineBtn: '💚 Send via LINE',
+      xBtn: '𝕏 Share on X',
+      lineMsg: (msg) =>
+        `🎂 To someone born on ${dateLabel}\n\n${msg ? msg + '\n\n' : ''}✨ Birth flower, birthstone & famous people born today — plus a special message 🌸\n\n▶ ${pageUrl}\n\n#HappyBirthday #BirthdayWorld`,
+      xMsg: (msg) =>
+        `🎂 Happy Birthday to everyone born on ${dateLabel}!${msg ? '\n\n' + msg : ''}\n\nBirthstone, birth flower & famous people ✨\n▶ ${pageUrl}\n\n#HappyBirthday #BirthdayWorld`,
+    },
+    es: {
+      placeholder: 'Añade un mensaje personal (ej: ¡Feliz cumpleaños!)',
+      sendLabel: 'Comparte el amor con alguien que cumple años hoy 🎂',
+      lineBtn: '💚 Enviar por LINE',
+      xBtn: '𝕏 Compartir en X',
+      lineMsg: (msg) =>
+        `🎂 Para alguien nacido el ${dateLabel}\n\n${msg ? msg + '\n\n' : ''}✨ Flor, piedra natal y famosos nacidos hoy — más un mensaje especial 🌸\n\n▶ ${pageUrl}\n\n#FelizCumpleaños #HappyBirthday`,
+      xMsg: (msg) =>
+        `🎂 ¡Feliz cumpleaños a todos los nacidos el ${dateLabel}!${msg ? '\n\n' + msg : ''}\n\nFlor, piedra natal y famosos ✨\n▶ ${pageUrl}\n\n#FelizCumpleaños #HappyBirthday`,
+    },
+    zh: {
+      placeholder: '添加一句祝福（例：生日快乐！祝你幸福！）',
+      sendLabel: '把祝福送给今天生日的人吧 🎂',
+      lineBtn: '💚 用LINE发送',
+      xBtn: '𝕏 分享到X',
+      lineMsg: (msg) =>
+        `🎂 致${dateLabel}出生的你\n\n${msg ? msg + '\n\n' : ''}✨ 生日花、诞生石和今天出生的名人，还有专属的幸福留言🌸\n\n▶ ${pageUrl}\n\n#生日快乐 #HappyBirthday`,
+      xMsg: (msg) =>
+        `🎂 祝所有${dateLabel}出生的人生日快乐！${msg ? '\n\n' + msg : ''}\n\n诞生石、生日花和名人 ✨\n▶ ${pageUrl}\n\n#生日快乐 #HappyBirthday`,
+    },
+    ko: {
+      placeholder: '한마디 메시지를 추가해보세요 (예: 생일 축하해! 항상 응원해!)',
+      sendLabel: '오늘 생일인 누군가에게 축하를 전해보세요 🎂',
+      lineBtn: '💚 LINE으로 보내기',
+      xBtn: '𝕏 X에서 공유',
+      lineMsg: (msg) =>
+        `🎂 ${dateLabel}에 태어난 당신에게\n\n${msg ? msg + '\n\n' : ''}✨ 탄생화, 탄생석, 오늘 태어난 유명인, 그리고 특별한 메시지가 있어요🌸\n\n▶ ${pageUrl}\n\n#생일축하해 #HappyBirthday`,
+      xMsg: (msg) =>
+        `🎂 ${dateLabel}에 태어난 모든 분들, 생일 축하합니다!${msg ? '\n\n' + msg : ''}\n\n탄생석, 탄생화, 유명인 ✨\n▶ ${pageUrl}\n\n#생일축하해 #HappyBirthday`,
+    },
+    pt: {
+      placeholder: 'Adicione uma mensagem pessoal (ex: Feliz aniversário! Te amo!)',
+      sendLabel: 'Compartilhe o amor com alguém que faz aniversário hoje 🎂',
+      lineBtn: '💚 Enviar pelo LINE',
+      xBtn: '𝕏 Compartilhar no X',
+      lineMsg: (msg) =>
+        `🎂 Para quem nasceu em ${dateLabel}\n\n${msg ? msg + '\n\n' : ''}✨ Flor do nascimento, pedra natal e famosos nascidos hoje — mais uma mensagem especial 🌸\n\n▶ ${pageUrl}\n\n#FelizAniversário #HappyBirthday`,
+      xMsg: (msg) =>
+        `🎂 Feliz aniversário a todos nascidos em ${dateLabel}!${msg ? '\n\n' + msg : ''}\n\nPedra natal, flor e famosos ✨\n▶ ${pageUrl}\n\n#FelizAniversário #HappyBirthday`,
+    },
+  };
+
+  const u = ui[lang] || ui.en;
+
+  const lineUrl = `https://line.me/R/msg/text/?${encodeURIComponent(u.lineMsg(userMsg))}`;
+  const xUrl = `https://twitter.com/intent/tweet?text=${encodeURIComponent(u.xMsg(userMsg))}`;
+
+  return (
+    <>
+      <style>{`
+        .share-input {
+          width: 100%;
+          background: rgba(255,255,255,0.04);
+          border: 1px solid rgba(232,200,74,0.25);
+          border-radius: 12px;
+          padding: 14px 18px;
+          color: #f5f0e8;
+          font-size: 14px;
+          font-family: 'Noto Sans JP', sans-serif;
+          resize: none;
+          outline: none;
+          transition: border-color 0.2s;
+          line-height: 1.7;
+        }
+        .share-input::placeholder { color: #6a6a8a; }
+        .share-input:focus { border-color: rgba(232,200,74,0.6); }
+        .share-btns {
+          display: flex;
+          gap: 12px;
+          justify-content: center;
+          flex-wrap: wrap;
+          margin-top: 16px;
+        }
+        .btn-line {
+          display: inline-flex;
+          align-items: center;
+          gap: 8px;
+          padding: 14px 28px;
+          background: linear-gradient(135deg, rgba(0,185,0,0.15), rgba(0,185,0,0.08));
+          border: 1px solid rgba(0,185,0,0.4);
+          border-radius: 100px;
+          color: #00c300;
+          font-size: 14px;
+          text-decoration: none;
+          letter-spacing: 0.05em;
+          transition: all 0.2s;
+          font-family: 'Noto Sans JP', sans-serif;
+        }
+        .btn-line:hover { background: rgba(0,185,0,0.2); transform: scale(1.03); }
+        .btn-x {
+          display: inline-flex;
+          align-items: center;
+          gap: 8px;
+          padding: 14px 28px;
+          background: linear-gradient(135deg, rgba(232,200,74,0.13), rgba(232,107,138,0.13));
+          border: 1px solid rgba(232,200,74,0.3);
+          border-radius: 100px;
+          color: #e8c84a;
+          font-size: 14px;
+          text-decoration: none;
+          letter-spacing: 0.05em;
+          transition: all 0.2s;
+          font-family: 'Noto Sans JP', sans-serif;
+        }
+        .btn-x:hover { background: rgba(232,200,74,0.2); transform: scale(1.03); }
+      `}</style>
+
+      <div style={{ textAlign: 'center', marginBottom: 48 }}>
+        <p style={{ fontSize: 13, color: 'var(--muted)', marginBottom: 16 }}>
+          {u.sendLabel}
+        </p>
+
+        {/* 一言メッセージ入力 */}
+        <textarea
+          className="share-input"
+          rows={2}
+          placeholder={u.placeholder}
+          value={userMsg}
+          onChange={(e) => setUserMsg(e.target.value)}
+          maxLength={100}
+        />
+
+        {/* シェアボタン */}
+        <div className="share-btns">
+          <a href={lineUrl} target="_blank" rel="noopener noreferrer" className="btn-line">
+            {u.lineBtn}
+          </a>
+          <a href={xUrl} target="_blank" rel="noopener noreferrer" className="btn-x">
+            {u.xBtn}
+          </a>
+        </div>
+      </div>
+    </>
+  );
+}
+
+// ── [day].js の shareArea 部分を以下に置き換える ──────────
+// 変更前：
+//   <div style={styles.shareArea}>
+//     <p ...>{lang === 'ja' ? 'あなたも...' : 'Share...'}</p>
+//     <a href={shareUrl} ...>{t.shareBtn}</a>
+//   </div>
+//
+// 変更後：
+//   <ShareSection lang={lang} month={month} day={day} happyMsg={happyMsg} />
+//
+// ※ useStateのインポートはすでにある前提
 // ── Component ─────────────────────────────────────────────
 export default function BirthdayPage({ lang, month, day, zodiac, stone, flower, famous, history, happyMsg }) {
   const t = messages[lang] || messages['en'];
@@ -395,15 +578,7 @@ export default function BirthdayPage({ lang, month, day, zodiac, stone, flower, 
           </div>
         </div>
 
-        <div style={styles.shareArea}>
-          <p style={{ fontSize: 13, color: 'var(--muted)', marginBottom: 16 }}>
-            {lang === 'ja' ? 'あなたも誰かの誕生日を祝ってあげましょう' : 'Share the love with someone born today!'}
-          </p>
-          <a href={shareUrl} target="_blank" rel="noopener noreferrer" style={styles.shareBtn}>
-            {t.shareBtn}
-          </a>
-        </div>
-
+       <ShareSection lang={lang} month={month} day={day} happyMsg={happyMsg} />
         <footer style={styles.footer}>
           <p>Happy Birthday to Everyone Born Today © 2026 KAZUMIYA</p>
           <p style={{ marginTop: 6 }}>{t.footerText}</p>
