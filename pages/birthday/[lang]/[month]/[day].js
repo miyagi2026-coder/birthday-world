@@ -192,6 +192,181 @@ function HappyMessageBox({ happyMsg, lang }) {
     </>
   );
 }
+// ── TodayFacts コンポーネント ────────────────────────────
+// [day].js の HappyMessageBox の直後に追加する
+// 使い方: <TodayFacts lang={lang} month={month} day={day} />
+
+function TodayFacts({ lang, month, day }) {
+
+  // ── 計算関数 ──────────────────────────────────────
+  const m = Number(month);
+  const d = Number(day);
+
+  // 一年の何日目か
+  const daysInMonth = [0,31,29,31,30,31,30,31,31,30,31,30,31];
+  let dayOfYear = d;
+  for (let i = 1; i < m; i++) dayOfYear += daysInMonth[i];
+  const remaining = 366 - dayOfYear;
+
+  // 世界の同日誕生日人口（世界人口80億÷366）
+  const sameDay = '約2,160万人';
+  const sameDayEn = 'about 21.6 million people';
+  const sameDayEs = 'unas 21,6 millones de personas';
+  const sameDayZh = '约2160万人';
+  const sameDayKo = '약 2,160만 명';
+  const sameDayPt = 'cerca de 21,6 milhões de pessoas';
+
+  // 月齢計算（簡易）
+  const baseDate = new Date(2000, 0, 6); // 2000/1/6 = 新月
+  const targetDate = new Date(2026, m - 1, d);
+  const diffDays = Math.floor((targetDate - baseDate) / (1000 * 60 * 60 * 24));
+  const moonAge = ((diffDays % 29.5) + 29.5) % 29.5;
+  const moonAgeRound = Math.round(moonAge);
+  const getMoonPhase = (age) => {
+    if (age <= 1 || age >= 29) return { ja: '新月', en: 'New Moon', es: 'Luna Nueva', zh: '新月', ko: '삭', pt: 'Lua Nova', emoji: '🌑' };
+    if (age <= 6) return { ja: '三日月', en: 'Waxing Crescent', es: 'Luna Creciente', zh: '蛾眉月', ko: '초승달', pt: 'Lua Crescente', emoji: '🌒' };
+    if (age <= 8) return { ja: '上弦の月', en: 'First Quarter', es: 'Cuarto Creciente', zh: '上弦月', ko: '상현달', pt: 'Quarto Crescente', emoji: '🌓' };
+    if (age <= 13) return { ja: '十三夜月', en: 'Waxing Gibbous', es: 'Gibosa Creciente', zh: '盈凸月', ko: '보름 전 달', pt: 'Gibosa Crescente', emoji: '🌔' };
+    if (age <= 16) return { ja: '満月', en: 'Full Moon', es: 'Luna Llena', zh: '满月', ko: '보름달', pt: 'Lua Cheia', emoji: '🌕' };
+    if (age <= 21) return { ja: '十六夜月', en: 'Waning Gibbous', es: 'Gibosa Menguante', zh: '亏凸月', ko: '보름 후 달', pt: 'Gibosa Minguante', emoji: '🌖' };
+    if (age <= 23) return { ja: '下弦の月', en: 'Last Quarter', es: 'Cuarto Menguante', zh: '下弦月', ko: '하현달', pt: 'Quarto Minguante', emoji: '🌗' };
+    return { ja: '有明月', en: 'Waning Crescent', es: 'Luna Menguante', zh: '残月', ko: '그믐달', pt: 'Lua Minguante', emoji: '🌘' };
+  };
+  const moon = getMoonPhase(moonAgeRound);
+
+  // 誕生日までの日数（次の誕生日）
+  const today = new Date();
+  const nextBirthday = new Date(today.getFullYear(), m - 1, d);
+  if (nextBirthday < today) nextBirthday.setFullYear(today.getFullYear() + 1);
+  const daysUntilBirthday = Math.ceil((nextBirthday - today) / (1000 * 60 * 60 * 24));
+
+  // 言語別テキスト
+  const ui = {
+    ja: {
+      title: '今日の豆知識',
+      facts: [
+        { icon: '🌍', text: `今日、世界中で${sameDay}が同じ誕生日を迎えています。` },
+        { icon: '📅', text: `${m}月${d}日は一年の${dayOfYear}日目。年末まであと${remaining}日です。` },
+        { icon: moon.emoji, text: `今日の月は「${moon.ja}」（月齢約${moonAgeRound}日）です。` },
+        { icon: '🎂', text: daysUntilBirthday === 0 ? '今日があなたの誕生日です！おめでとうございます🎉' : `次の誕生日まであと${daysUntilBirthday}日です。` },
+      ],
+    },
+    en: {
+      title: "Today's Fun Facts",
+      facts: [
+        { icon: '🌍', text: `Today, ${sameDayEn} around the world share your birthday.` },
+        { icon: '📅', text: `${['','January','February','March','April','May','June','July','August','September','October','November','December'][m]} ${d} is day ${dayOfYear} of the year. ${remaining} days left until year's end.` },
+        { icon: moon.emoji, text: `Today's moon is the "${moon.en}" (moon age: about ${moonAgeRound} days).` },
+        { icon: '🎂', text: daysUntilBirthday === 0 ? "Today is your birthday! Congratulations 🎉" : `${daysUntilBirthday} days until your next birthday.` },
+      ],
+    },
+    es: {
+      title: 'Datos Curiosos de Hoy',
+      facts: [
+        { icon: '🌍', text: `Hoy, ${sameDayEs} en todo el mundo comparten tu cumpleaños.` },
+        { icon: '📅', text: `El ${d} de ${['','enero','febrero','marzo','abril','mayo','junio','julio','agosto','septiembre','octubre','noviembre','diciembre'][m]} es el día ${dayOfYear} del año. Faltan ${remaining} días para fin de año.` },
+        { icon: moon.emoji, text: `La luna de hoy es "${moon.es}" (edad lunar: unos ${moonAgeRound} días).` },
+        { icon: '🎂', text: daysUntilBirthday === 0 ? '¡Hoy es tu cumpleaños! Felicitaciones 🎉' : `Faltan ${daysUntilBirthday} días para tu próximo cumpleaños.` },
+      ],
+    },
+    zh: {
+      title: '今日趣知识',
+      facts: [
+        { icon: '🌍', text: `今天，全世界${sameDayZh}与你同一天生日。` },
+        { icon: '📅', text: `${m}月${d}日是一年中的第${dayOfYear}天，距年末还有${remaining}天。` },
+        { icon: moon.emoji, text: `今天的月亮是"${moon.zh}"（月龄约${moonAgeRound}天）。` },
+        { icon: '🎂', text: daysUntilBirthday === 0 ? '今天是你的生日！恭喜你🎉' : `距下次生日还有${daysUntilBirthday}天。` },
+      ],
+    },
+    ko: {
+      title: '오늘의 재미있는 사실',
+      facts: [
+        { icon: '🌍', text: `오늘 전 세계에서 ${sameDayKo}이 같은 생일을 맞이합니다.` },
+        { icon: '📅', text: `${m}월 ${d}일은 일 년 중 ${dayOfYear}번째 날입니다. 연말까지 ${remaining}일 남았습니다.` },
+        { icon: moon.emoji, text: `오늘의 달은 "${moon.ko}"（월령 약 ${moonAgeRound}일）입니다.` },
+        { icon: '🎂', text: daysUntilBirthday === 0 ? '오늘이 당신의 생일입니다! 축하합니다 🎉' : `다음 생일까지 ${daysUntilBirthday}일 남았습니다.` },
+      ],
+    },
+    pt: {
+      title: 'Curiosidades de Hoje',
+      facts: [
+        { icon: '🌍', text: `Hoje, ${sameDayPt} ao redor do mundo compartilham seu aniversário.` },
+        { icon: '📅', text: `${d} de ${['','janeiro','fevereiro','março','abril','maio','junho','julho','agosto','setembro','outubro','novembro','dezembro'][m]} é o dia ${dayOfYear} do ano. Faltam ${remaining} dias para o fim do ano.` },
+        { icon: moon.emoji, text: `A lua de hoje é "${moon.pt}" (idade lunar: cerca de ${moonAgeRound} dias).` },
+        { icon: '🎂', text: daysUntilBirthday === 0 ? 'Hoje é seu aniversário! Parabéns 🎉' : `Faltam ${daysUntilBirthday} dias para seu próximo aniversário.` },
+      ],
+    },
+  };
+
+  const u = ui[lang] || ui.en;
+
+  return (
+    <>
+      <style>{`
+        .facts-section {
+          margin: 40px 0;
+        }
+        .facts-title {
+          font-size: 13px;
+          letter-spacing: 0.12em;
+          color: var(--muted, #8a8aaa);
+          text-align: center;
+          margin-bottom: 16px;
+          text-transform: uppercase;
+        }
+        .facts-grid {
+          display: grid;
+          grid-template-columns: 1fr 1fr;
+          gap: 12px;
+        }
+        @media (max-width: 480px) {
+          .facts-grid {
+            grid-template-columns: 1fr;
+          }
+        }
+        .fact-card {
+          background: rgba(255,255,255,0.03);
+          border: 1px solid rgba(232,200,74,0.12);
+          border-radius: 12px;
+          padding: 14px 16px;
+          display: flex;
+          align-items: flex-start;
+          gap: 10px;
+        }
+        .fact-icon {
+          font-size: 20px;
+          flex-shrink: 0;
+          margin-top: 2px;
+        }
+        .fact-text {
+          font-size: 13px;
+          color: #b0a8c8;
+          line-height: 1.7;
+        }
+      `}</style>
+
+      <div className="facts-section">
+        <div className="facts-title">✦ {u.title} ✦</div>
+        <div className="facts-grid">
+          {u.facts.map((fact, i) => (
+            <div key={i} className="fact-card">
+              <span className="fact-icon">{fact.icon}</span>
+              <span className="fact-text">{fact.text}</span>
+            </div>
+          ))}
+        </div>
+      </div>
+    </>
+  );
+}
+
+// ── [day].js への組み込み方 ──────────────────────────────
+// 1. このコンポーネントを ShareSection の直前に貼り付ける
+// 2. JSX内の ShareSection の直前に以下を追加：
+//
+//    <TodayFacts lang={lang} month={month} day={day} />
+//
+// 以上2ステップのみ！
 // ── ShareSection コンポーネント ────────────────────────────
 // [day].js の shareArea 部分をこれに置き換える
 
@@ -577,7 +752,7 @@ export default function BirthdayPage({ lang, month, day, zodiac, stone, flower, 
             </div>
           </div>
         </div>
-
+<TodayFacts lang={lang} month={month} day={day} />
        <ShareSection lang={lang} month={month} day={day} happyMsg={happyMsg} />
         <footer style={styles.footer}>
           <p>Happy Birthday to Everyone Born Today © 2026 KAZUMIYA</p>
