@@ -591,6 +591,11 @@ export default function BirthdayPage({ lang, month, day, zodiac, stone, flower, 
             <a href="/privacy" style={{ color: '#44445a', textDecoration: 'none' }}>
               プライバシーポリシー / Privacy Policy
             </a>
+                <p style={{ marginTop: 6 }}>
+  <a href="/about" style={{ color: '#44445a', textDecoration: 'none' }}>
+    Birthday Worldについて / About
+  </a>
+</p>
           </p>
           <p style={{ marginTop: 6 }}>
             <a href="/contact" style={{ color: '#44445a', textDecoration: 'none' }}>
